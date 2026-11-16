@@ -1,118 +1,122 @@
 {
  "voice": "pt-BR-AntonioNeural",
+ "fps": 30,
+ "total_seconds": 49.8,
  "scenes": [
   {
    "scene": 1,
-   "voice_start": 0.15,
-   "voice_end": 4.572,
-   "duration": 4.422,
-   "speed": 1.181,
+   "scene_start": 0.0,
+   "scene_duration": 5.167,
+   "voice_start": 0.1,
+   "voice_end": 4.827,
+   "speed": 1.097,
    "phrases": [
     {
      "text": "Tudo o que te ensinaram sobre como o GPS do seu celular funciona...",
-     "rate": 32,
+     "rate": 23,
      "pitch": 2,
      "volume": 0,
      "start": 0.0,
-     "end": 2.923
+     "end": 3.128
     },
     {
      "text": "está totalmente errado.",
-     "rate": 20,
+     "rate": 12,
      "pitch": 7,
      "volume": 14,
-     "start": 3.177,
-     "end": 4.422
+     "start": 3.402,
+     "end": 4.727
     }
    ],
    "words": [
     {
      "text": "Tudo",
-     "start": 0.17,
-     "end": 0.359
+     "start": 0.12,
+     "end": 0.323
     },
     {
      "text": "o",
-     "start": 0.369,
-     "end": 0.407
+     "start": 0.333,
+     "end": 0.374
     },
     {
      "text": "que",
-     "start": 0.416,
-     "end": 0.482
+     "start": 0.384,
+     "end": 0.455
     },
     {
      "text": "te",
-     "start": 0.492,
-     "end": 0.558
+     "start": 0.466,
+     "end": 0.537
     },
     {
      "text": "ensinaram",
-     "start": 0.568,
-     "end": 0.947
+     "start": 0.547,
+     "end": 0.953
     },
     {
      "text": "sobre",
-     "start": 0.956,
-     "end": 1.174
+     "start": 0.964,
+     "end": 1.197
     },
     {
      "text": "como",
-     "start": 1.183,
-     "end": 1.373
+     "start": 1.207,
+     "end": 1.411
     },
     {
      "text": "o",
-     "start": 1.382,
-     "end": 1.401
+     "start": 1.421,
+     "end": 1.441
     },
     {
      "text": "GPS",
-     "start": 1.411,
-     "end": 1.865
+     "start": 1.451,
+     "end": 1.939
     },
     {
      "text": "do",
-     "start": 1.875,
-     "end": 1.95
+     "start": 1.949,
+     "end": 2.031
     },
     {
      "text": "seu",
-     "start": 1.96,
-     "end": 2.092
+     "start": 2.041,
+     "end": 2.183
     },
     {
      "text": "celular",
-     "start": 2.102,
-     "end": 2.481
+     "start": 2.193,
+     "end": 2.6
     },
     {
      "text": "funciona",
-     "start": 2.49,
-     "end": 2.973
+     "start": 2.61,
+     "end": 3.128
     },
     {
      "text": "está",
-     "start": 3.347,
-     "end": 3.618
+     "start": 3.522,
+     "end": 3.812
     },
     {
      "text": "totalmente",
-     "start": 3.628,
-     "end": 4.118
+     "start": 3.823,
+     "end": 4.348
     },
     {
      "text": "errado",
-     "start": 4.128,
-     "end": 4.472
+     "start": 4.359,
+     "end": 4.727
     }
    ]
   },
   {
    "scene": 2,
-   "voice_start": 5.15,
-   "voice_end": 8.304,
-   "duration": 3.154,
+   "scene_start": 5.167,
+   "scene_duration": 3.6,
+   "voice_start": 5.267,
+   "voice_end": 8.421,
    "speed": 1.0,
    "phrases": [
     {
@@ -127,71 +131,72 @@
    "words": [
     {
      "text": "A",
-     "start": 5.17,
-     "end": 5.25
+     "start": 5.287,
+     "end": 5.366
     },
     {
      "text": "maioria",
-     "start": 5.261,
-     "end": 5.659
+     "start": 5.378,
+     "end": 5.775
     },
     {
      "text": "das",
-     "start": 5.67,
-     "end": 5.818
+     "start": 5.787,
+     "end": 5.934
     },
     {
      "text": "pessoas",
-     "start": 5.829,
-     "end": 6.227
+     "start": 5.946,
+     "end": 6.343
     },
     {
      "text": "acha",
-     "start": 6.238,
-     "end": 6.625
+     "start": 6.355,
+     "end": 6.741
     },
     {
      "text": "que",
-     "start": 6.636,
-     "end": 6.715
+     "start": 6.753,
+     "end": 6.832
     },
     {
      "text": "o",
-     "start": 6.727,
-     "end": 6.75
+     "start": 6.843,
+     "end": 6.866
     },
     {
      "text": "seu",
-     "start": 6.761,
-     "end": 6.92
+     "start": 6.878,
+     "end": 7.037
     },
     {
      "text": "celular",
-     "start": 6.931,
-     "end": 7.386
+     "start": 7.048,
+     "end": 7.503
     },
     {
      "text": "manda",
-     "start": 7.397,
-     "end": 7.738
+     "start": 7.514,
+     "end": 7.855
     },
     {
      "text": "o",
-     "start": 7.75,
-     "end": 7.784
+     "start": 7.866,
+     "end": 7.9
     },
     {
      "text": "sinal",
-     "start": 7.795,
-     "end": 8.204
+     "start": 7.912,
+     "end": 8.321
     }
    ]
   },
   {
    "scene": 3,
-   "voice_start": 10.15,
-   "voice_end": 13.991,
-   "duration": 3.841,
+   "scene_start": 8.767,
+   "scene_duration": 4.3,
+   "voice_start": 8.867,
+   "voice_end": 12.707,
    "speed": 1.0,
    "phrases": [
     {
@@ -214,76 +219,77 @@
    "words": [
     {
      "text": "para",
-     "start": 10.17,
-     "end": 10.337
+     "start": 8.887,
+     "end": 9.054
     },
     {
      "text": "o",
-     "start": 10.349,
-     "end": 10.371
+     "start": 9.065,
+     "end": 9.088
     },
     {
      "text": "espaço",
-     "start": 10.382,
-     "end": 10.884
+     "start": 9.099,
+     "end": 9.601
     },
     {
      "text": "e",
-     "start": 10.895,
-     "end": 10.918
+     "start": 9.612,
+     "end": 9.634
     },
     {
      "text": "o",
-     "start": 10.929,
-     "end": 10.962
+     "start": 9.646,
+     "end": 9.679
     },
     {
      "text": "satélite",
-     "start": 10.974,
-     "end": 11.476
+     "start": 9.69,
+     "end": 10.192
     },
     {
      "text": "te",
-     "start": 11.487,
-     "end": 11.61
+     "start": 10.204,
+     "end": 10.326
     },
     {
      "text": "acha",
-     "start": 11.621,
-     "end": 11.978
+     "start": 10.338,
+     "end": 10.695
     },
     {
      "text": "mas",
-     "start": 12.378,
-     "end": 12.591
+     "start": 11.095,
+     "end": 11.307
     },
     {
      "text": "é",
-     "start": 12.603,
-     "end": 12.816
+     "start": 11.32,
+     "end": 11.532
     },
     {
      "text": "o",
-     "start": 12.828,
-     "end": 12.89
+     "start": 11.545,
+     "end": 11.607
     },
     {
      "text": "exato",
-     "start": 12.903,
-     "end": 13.316
+     "start": 11.62,
+     "end": 12.032
     },
     {
      "text": "oposto",
-     "start": 13.328,
-     "end": 13.891
+     "start": 12.045,
+     "end": 12.607
     }
    ]
   },
   {
    "scene": 4,
-   "voice_start": 15.15,
-   "voice_end": 19.13,
-   "duration": 3.98,
+   "scene_start": 13.067,
+   "scene_duration": 4.433,
+   "voice_start": 13.167,
+   "voice_end": 17.147,
    "speed": 1.0,
    "phrases": [
     {
@@ -306,66 +312,67 @@
    "words": [
     {
      "text": "O",
-     "start": 15.17,
-     "end": 15.274
+     "start": 13.187,
+     "end": 13.291
     },
     {
      "text": "seu",
-     "start": 15.286,
-     "end": 15.459
+     "start": 13.302,
+     "end": 13.476
     },
     {
      "text": "celular",
-     "start": 15.471,
-     "end": 15.945
+     "start": 13.488,
+     "end": 13.962
     },
     {
      "text": "não",
-     "start": 15.957,
-     "end": 16.131
+     "start": 13.974,
+     "end": 14.147
     },
     {
      "text": "manda",
-     "start": 16.142,
-     "end": 16.432
+     "start": 14.159,
+     "end": 14.448
     },
     {
      "text": "nada",
-     "start": 16.443,
-     "end": 16.767
+     "start": 14.46,
+     "end": 14.784
     },
     {
      "text": "para",
-     "start": 16.779,
-     "end": 16.952
+     "start": 14.795,
+     "end": 14.969
     },
     {
      "text": "cima",
-     "start": 16.964,
-     "end": 17.346
+     "start": 14.981,
+     "end": 15.363
     },
     {
      "text": "Ele",
-     "start": 17.766,
-     "end": 17.946
+     "start": 15.783,
+     "end": 15.963
     },
     {
      "text": "apenas",
-     "start": 17.96,
-     "end": 18.363
+     "start": 15.977,
+     "end": 16.38
     },
     {
      "text": "escuta",
-     "start": 18.377,
-     "end": 19.03
+     "start": 16.394,
+     "end": 17.047
     }
    ]
   },
   {
    "scene": 5,
-   "voice_start": 20.15,
-   "voice_end": 23.011,
-   "duration": 2.861,
+   "scene_start": 17.5,
+   "scene_duration": 3.3,
+   "voice_start": 17.6,
+   "voice_end": 20.461,
    "speed": 1.0,
    "phrases": [
     {
@@ -380,56 +387,57 @@
    "words": [
     {
      "text": "Satélites",
-     "start": 20.17,
-     "end": 20.812
+     "start": 17.62,
+     "end": 18.262
     },
     {
      "text": "no",
-     "start": 20.824,
-     "end": 20.892
+     "start": 18.274,
+     "end": 18.342
     },
     {
      "text": "espaço",
-     "start": 20.904,
-     "end": 21.305
+     "start": 18.354,
+     "end": 18.755
     },
     {
      "text": "enviam",
-     "start": 21.317,
-     "end": 21.718
+     "start": 18.767,
+     "end": 19.168
     },
     {
      "text": "a",
-     "start": 21.73,
-     "end": 21.775
+     "start": 19.18,
+     "end": 19.226
     },
     {
      "text": "hora",
-     "start": 21.787,
-     "end": 22.028
+     "start": 19.237,
+     "end": 19.478
     },
     {
      "text": "exata",
-     "start": 22.039,
-     "end": 22.406
+     "start": 19.489,
+     "end": 19.856
     },
     {
      "text": "do",
-     "start": 22.418,
-     "end": 22.498
+     "start": 19.868,
+     "end": 19.948
     },
     {
      "text": "sinal",
-     "start": 22.509,
-     "end": 22.911
+     "start": 19.959,
+     "end": 20.361
     }
    ]
   },
   {
    "scene": 6,
-   "voice_start": 25.15,
-   "voice_end": 29.296,
-   "duration": 4.146,
+   "scene_start": 20.8,
+   "scene_duration": 4.6,
+   "voice_start": 20.9,
+   "voice_end": 25.046,
    "speed": 1.0,
    "phrases": [
     {
@@ -452,71 +460,72 @@
    "words": [
     {
      "text": "e",
-     "start": 25.17,
-     "end": 25.284
+     "start": 20.92,
+     "end": 21.034
     },
     {
      "text": "o",
-     "start": 25.295,
-     "end": 25.34
+     "start": 21.045,
+     "end": 21.09
     },
     {
      "text": "celular",
-     "start": 25.352,
-     "end": 25.829
+     "start": 21.102,
+     "end": 21.579
     },
     {
      "text": "calcula",
-     "start": 25.84,
-     "end": 26.261
+     "start": 21.59,
+     "end": 22.011
     },
     {
      "text": "o",
-     "start": 26.272,
-     "end": 26.329
+     "start": 22.022,
+     "end": 22.079
     },
     {
      "text": "tempo",
-     "start": 26.34,
-     "end": 26.659
+     "start": 22.09,
+     "end": 22.409
     },
     {
      "text": "de",
-     "start": 26.67,
-     "end": 26.727
+     "start": 22.42,
+     "end": 22.477
     },
     {
      "text": "chegada",
-     "start": 26.738,
-     "end": 27.25
+     "start": 22.488,
+     "end": 23.0
     },
     {
      "text": "desenhando",
-     "start": 27.53,
-     "end": 28.167
+     "start": 23.28,
+     "end": 23.917
     },
     {
      "text": "uma",
-     "start": 28.179,
-     "end": 28.265
+     "start": 23.929,
+     "end": 24.015
     },
     {
      "text": "esfera",
-     "start": 28.277,
-     "end": 28.62
+     "start": 24.027,
+     "end": 24.37
     },
     {
      "text": "gigante",
-     "start": 28.633,
-     "end": 29.196
+     "start": 24.383,
+     "end": 24.946
     }
    ]
   },
   {
    "scene": 7,
-   "voice_start": 30.15,
-   "voice_end": 34.69,
-   "duration": 4.54,
+   "scene_start": 25.4,
+   "scene_duration": 5.0,
+   "voice_start": 25.5,
+   "voice_end": 30.04,
    "speed": 1.0,
    "phrases": [
     {
@@ -539,76 +548,77 @@
    "words": [
     {
      "text": "Com",
-     "start": 30.17,
-     "end": 30.318
+     "start": 25.52,
+     "end": 25.668
     },
     {
      "text": "um",
-     "start": 30.329,
-     "end": 30.386
+     "start": 25.679,
+     "end": 25.736
     },
     {
      "text": "satélite",
-     "start": 30.397,
-     "end": 30.931
+     "start": 25.747,
+     "end": 26.281
     },
     {
      "text": "você",
-     "start": 31.181,
-     "end": 31.42
+     "start": 26.531,
+     "end": 26.77
     },
     {
      "text": "está",
-     "start": 31.431,
-     "end": 31.659
+     "start": 26.781,
+     "end": 27.009
     },
     {
      "text": "em",
-     "start": 31.67,
-     "end": 31.738
+     "start": 27.02,
+     "end": 27.088
     },
     {
      "text": "qualquer",
-     "start": 31.75,
-     "end": 32.079
+     "start": 27.1,
+     "end": 27.429
     },
     {
      "text": "lugar",
-     "start": 32.09,
-     "end": 32.431
+     "start": 27.44,
+     "end": 27.781
     },
     {
      "text": "Com",
-     "start": 32.751,
-     "end": 33.004
+     "start": 28.101,
+     "end": 28.354
     },
     {
      "text": "três",
-     "start": 33.016,
-     "end": 33.424
+     "start": 28.366,
+     "end": 28.774
     },
     {
      "text": "a",
-     "start": 33.677,
-     "end": 33.761
+     "start": 29.027,
+     "end": 29.111
     },
     {
      "text": "área",
-     "start": 33.773,
-     "end": 34.049
+     "start": 29.123,
+     "end": 29.399
     },
     {
      "text": "diminui",
-     "start": 34.061,
-     "end": 34.59
+     "start": 29.411,
+     "end": 29.94
     }
    ]
   },
   {
    "scene": 8,
-   "voice_start": 35.15,
-   "voice_end": 38.128,
-   "duration": 2.978,
+   "scene_start": 30.4,
+   "scene_duration": 3.433,
+   "voice_start": 30.5,
+   "voice_end": 33.478,
    "speed": 1.0,
    "phrases": [
     {
@@ -631,51 +641,52 @@
    "words": [
     {
      "text": "mas",
-     "start": 35.17,
-     "end": 35.387
+     "start": 30.52,
+     "end": 30.737
     },
     {
      "text": "é",
-     "start": 35.4,
-     "end": 35.578
+     "start": 30.75,
+     "end": 30.928
     },
     {
      "text": "o",
-     "start": 35.591,
-     "end": 35.655
+     "start": 30.941,
+     "end": 31.005
     },
     {
      "text": "quarto",
-     "start": 35.667,
-     "end": 36.088
+     "start": 31.017,
+     "end": 31.438
     },
     {
      "text": "satélite",
-     "start": 36.101,
-     "end": 36.777
+     "start": 31.451,
+     "end": 32.127
     },
     {
      "text": "que",
-     "start": 37.017,
-     "end": 37.177
+     "start": 32.367,
+     "end": 32.527
     },
     {
      "text": "muda",
-     "start": 37.19,
-     "end": 37.602
+     "start": 32.54,
+     "end": 32.952
     },
     {
      "text": "tudo",
-     "start": 37.615,
-     "end": 38.028
+     "start": 32.965,
+     "end": 33.378
     }
    ]
   },
   {
    "scene": 9,
-   "voice_start": 40.15,
-   "voice_end": 44.592,
-   "duration": 4.442,
+   "scene_start": 33.833,
+   "scene_duration": 4.9,
+   "voice_start": 33.933,
+   "voice_end": 38.375,
    "speed": 1.0,
    "phrases": [
     {
@@ -698,66 +709,67 @@
    "words": [
     {
      "text": "Ele",
-     "start": 40.17,
-     "end": 40.363
+     "start": 33.953,
+     "end": 34.146
     },
     {
      "text": "cruza",
-     "start": 40.375,
-     "end": 40.761
+     "start": 34.158,
+     "end": 34.544
     },
     {
      "text": "todas",
-     "start": 40.772,
-     "end": 41.068
+     "start": 34.556,
+     "end": 34.851
     },
     {
      "text": "as",
-     "start": 41.079,
-     "end": 41.193
+     "start": 34.862,
+     "end": 34.976
     },
     {
      "text": "esferas",
-     "start": 41.204,
-     "end": 41.852
+     "start": 34.987,
+     "end": 35.635
     },
     {
      "text": "e",
-     "start": 42.112,
-     "end": 42.244
+     "start": 35.895,
+     "end": 36.027
     },
     {
      "text": "crava",
-     "start": 42.256,
-     "end": 42.617
+     "start": 36.039,
+     "end": 36.4
     },
     {
      "text": "milimetricamente",
-     "start": 42.629,
-     "end": 43.53
+     "start": 36.412,
+     "end": 37.313
     },
     {
      "text": "a",
-     "start": 43.542,
-     "end": 43.578
+     "start": 37.325,
+     "end": 37.361
     },
     {
      "text": "sua",
-     "start": 43.59,
-     "end": 43.855
+     "start": 37.374,
+     "end": 37.638
     },
     {
      "text": "altitude",
-     "start": 43.867,
-     "end": 44.492
+     "start": 37.65,
+     "end": 38.275
     }
    ]
   },
   {
    "scene": 10,
-   "voice_start": 45.15,
-   "voice_end": 47.647,
-   "duration": 2.497,
+   "scene_start": 38.733,
+   "scene_duration": 3.2,
+   "voice_start": 38.833,
+   "voice_end": 41.331,
    "speed": 1.0,
    "phrases": [
     {
@@ -772,51 +784,52 @@
    "words": [
     {
      "text": "Bizarro",
-     "start": 45.17,
-     "end": 45.746
+     "start": 38.853,
+     "end": 39.429
     },
     {
      "text": "pensar",
-     "start": 45.758,
-     "end": 46.236
+     "start": 39.442,
+     "end": 39.92
     },
     {
      "text": "que",
-     "start": 46.248,
-     "end": 46.346
+     "start": 39.932,
+     "end": 40.03
     },
     {
      "text": "o",
-     "start": 46.359,
-     "end": 46.408
+     "start": 40.042,
+     "end": 40.091
     },
     {
      "text": "mapa",
-     "start": 46.42,
-     "end": 46.763
+     "start": 40.103,
+     "end": 40.446
     },
     {
      "text": "do",
-     "start": 46.775,
-     "end": 46.873
+     "start": 40.459,
+     "end": 40.557
     },
     {
      "text": "seu",
-     "start": 46.886,
-     "end": 47.094
+     "start": 40.569,
+     "end": 40.777
     },
     {
      "text": "bolso",
-     "start": 47.106,
-     "end": 47.547
+     "start": 40.79,
+     "end": 41.231
     }
    ]
   },
   {
    "scene": 11,
-   "voice_start": 50.15,
-   "voice_end": 53.088,
-   "duration": 2.938,
+   "scene_start": 41.933,
+   "scene_duration": 3.4,
+   "voice_start": 42.033,
+   "voice_end": 44.972,
    "speed": 1.0,
    "phrases": [
     {
@@ -831,46 +844,47 @@
    "words": [
     {
      "text": "funciona",
-     "start": 50.17,
-     "end": 50.76
+     "start": 42.053,
+     "end": 42.643
     },
     {
      "text": "conversando",
-     "start": 50.771,
-     "end": 51.326
+     "start": 42.655,
+     "end": 43.209
     },
     {
      "text": "direto",
-     "start": 51.337,
-     "end": 51.762
+     "start": 43.221,
+     "end": 43.645
     },
     {
      "text": "com",
-     "start": 51.774,
-     "end": 51.915
+     "start": 43.657,
+     "end": 43.799
     },
     {
      "text": "o",
-     "start": 51.927,
-     "end": 51.974
+     "start": 43.81,
+     "end": 43.858
     },
     {
      "text": "espaço",
-     "start": 51.986,
-     "end": 52.446
+     "start": 43.869,
+     "end": 44.329
     },
     {
      "text": "sideral",
-     "start": 52.458,
-     "end": 52.988
+     "start": 44.341,
+     "end": 44.872
     }
    ]
   },
   {
    "scene": 12,
-   "voice_start": 55.15,
-   "voice_end": 58.605,
-   "duration": 3.455,
+   "scene_start": 45.333,
+   "scene_duration": 4.467,
+   "voice_start": 45.433,
+   "voice_end": 48.888,
    "speed": 1.0,
    "phrases": [
     {
@@ -893,38 +907,38 @@
    "words": [
     {
      "text": "Curtiu",
-     "start": 55.17,
-     "end": 55.654
+     "start": 45.453,
+     "end": 45.937
     },
     {
      "text": "Segue",
-     "start": 55.993,
-     "end": 56.403
+     "start": 46.277,
+     "end": 46.686
     },
     {
      "text": "para",
-     "start": 56.414,
-     "end": 56.607
+     "start": 46.697,
+     "end": 46.89
     },
     {
      "text": "mais",
-     "start": 56.618,
-     "end": 56.857
+     "start": 46.902,
+     "end": 47.14
     },
     {
      "text": "curiosidades",
-     "start": 56.868,
-     "end": 57.539
+     "start": 47.152,
+     "end": 47.822
     },
     {
      "text": "de",
-     "start": 57.55,
-     "end": 57.675
+     "start": 47.834,
+     "end": 47.959
     },
     {
      "text": "tecnologia",
-     "start": 57.687,
-     "end": 58.505
+     "start": 47.97,
+     "end": 48.788
     }
    ]
   }

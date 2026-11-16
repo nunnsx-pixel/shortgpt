@@ -3,11 +3,13 @@
 
 Each scene's line is split into phrases; every phrase gets its own rate / pitch / volume so the delivery is dynamic
 (curious, dramatic pause, intimate reveal, energetic climax, upbeat CTA) instead of one flat read. Each scene is then
-fitted into its 5 s slot (speed-up if needed), stitched into a 60 s track, mastered (EQ + compression + loudness
-normalisation) and the real per-word timings are written out so the captions can be re-synchronised to the voice.
+cut to the length of its line (no dead air: 0.45 s between lines, scenes last as long as the line needs, min 3.2 s),
+stitched into one track, mastered (EQ + compression + loudness normalisation) and the real per-word timings are written
+out so the captions and the scene lengths are synchronised to the voice.
 
 Needs network access to speech.platform.bing.com. Outputs:
-  out/voiceover.wav       60 s mastered stereo track (used by tools/encode.sh)
+  out/voiceover.wav       mastered stereo track, as long as the video (used by tools/encode.sh)
+  src/scene_timing.json   frames per scene + voice cues (used by the renderer, captions and encode)
   out/voiceover.mp3       same, compressed (small, committed)
   out/voice_words.json    per scene: phrases + every spoken word with absolute start/end seconds
 
@@ -22,10 +24,13 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 OUT = os.path.join(ROOT, 'out'); os.makedirs(OUT, exist_ok=True)
 VOICE = sys.argv[sys.argv.index('--voice') + 1] if '--voice' in sys.argv else 'pt-BR-AntonioNeural'
 SR = 24000                 # synthesis sample rate
-SCENE_S = 5.0
-VO_START = 0.15            # the voice starts this long after each hard cut
-TARGET = 4.55              # max seconds of speech per scene (0.15 + 4.55 < 5 s: always done before the next cut)
-MAX_RATE = 0.42            # never speed the TTS up beyond +42 % (quality), the rest is trimmed from pauses
+FPS = 30
+VO_START = 0.10            # the voice starts this long after each hard cut
+TAIL = 0.35                # silence after a line before the cut; gap between two lines = TAIL + VO_START = 0.45 s
+END_TAIL = 0.90            # the last scene holds a little longer on the CTA
+MIN_SCENE = 3.2            # shortest allowed scene (the animation needs a moment to read)
+TARGET = 4.9               # a line is never longer than this (speeds the delivery up if needed)
+MAX_RATE = 0.42            # never speed the TTS up beyond +42 % (quality)
 
 # The edge-tts client does not use HTTPS_PROXY by itself and must trust the egress proxy's CA (verification stays ON).
 if os.path.exists('/root/.ccr/ca-bundle.crt'):
@@ -120,21 +125,46 @@ async def build_scene(idx, speed):
 
 
 async def main():
-    track = np.zeros(int(60 * SR), dtype=np.float32)
-    report = []
+    scenes = []
     for i in range(12):
         speed = 1.0
         for attempt in range(3):
             pcm, words, spans = await build_scene(i, speed)
             dur = len(pcm) / SR
             if dur <= TARGET or speed >= 1.6: break
-            speed *= max(1.04, dur / TARGET)           # speed up (rates are capped, so also check again)
-        start = i * SCENE_S + VO_START
-        a = int(start * SR); track[a:a + len(pcm)] += pcm[:len(track) - a]
-        abs_words = [{'text': w, 'start': round(start + s, 3), 'end': round(start + e, 3)} for (w, s, e) in words]
-        report.append({'scene': i + 1, 'voice_start': round(start, 3), 'voice_end': round(start + dur, 3), 'duration': round(dur, 3), 'speed': round(speed, 3), 'phrases': spans, 'words': abs_words})
-        flag = '' if dur <= TARGET + 0.05 else '   <-- LONGER than target'
-        print(f"scene {i+1:2d}: {dur:4.2f}s  speed x{speed:.2f}  rates {[p['rate'] for p in spans]}{flag}", flush=True)
+            speed *= max(1.04, dur / TARGET)
+        scenes.append({'pcm': pcm, 'words': words, 'spans': spans, 'dur': dur, 'speed': speed})
+        print(f"scene {i+1:2d}: line {dur:4.2f}s  speed x{speed:.2f}  rates {[p['rate'] for p in spans]}", flush=True)
+
+    # scene length = lead + line + tail (frames), never shorter than MIN_SCENE
+    frames = []
+    for i, sc in enumerate(scenes):
+        tail = END_TAIL if i == 11 else TAIL
+        frames.append(max(round(MIN_SCENE * FPS), round((VO_START + sc['dur'] + tail) * FPS)))
+    total = sum(frames); L = total / FPS
+    starts, acc = [], 0
+    for n in frames: starts.append(acc / FPS); acc += n
+
+    track = np.zeros(int(L * SR) + SR, dtype=np.float32)
+    report = []
+    for i, sc in enumerate(scenes):
+        vstart = starts[i] + VO_START
+        a = int(vstart * SR); track[a:a + len(sc['pcm'])] += sc['pcm']
+        abs_words = [{'text': w, 'start': round(vstart + s_, 3), 'end': round(vstart + e_, 3)} for (w, s_, e_) in sc['words']]
+        report.append({'scene': i + 1, 'scene_start': round(starts[i], 3), 'scene_duration': round(frames[i] / FPS, 3), 'voice_start': round(vstart, 3),
+                       'voice_end': round(vstart + sc['dur'], 3), 'speed': round(sc['speed'], 3), 'phrases': sc['spans'], 'words': abs_words})
+        print(f"scene {i+1:2d}: {frames[i]/FPS:4.2f}s long  (line {VO_START:.2f}-{VO_START + sc['dur']:.2f}s, gap to next {frames[i]/FPS - VO_START - sc['dur']:.2f}s)")
+    print(f"total: {total} frames = {L:.2f} s")
+
+    # voice cues that drive visual beats (voice-local seconds)
+    def find(scene, norm_text, which):
+        for w in report[scene - 1]['words']:
+            if re.sub(r'[^a-z]', '', w['text'].lower().replace('ç', 'c')) == norm_text:
+                return round((w['start'] if which == 'start' else w['end']) - starts[scene - 1], 3)
+        return None
+    cues = {k: v for k, v in {'s11_lock': find(11, 'espaco', 'start'), 's12_curtiu_end': find(12, 'curtiu', 'end'), 's12_segue': find(12, 'segue', 'start')}.items() if v is not None}
+    with open(os.path.join(ROOT, 'src', 'scene_timing.json'), 'w') as f:
+        json.dump({'fps': FPS, 'frames': frames, 'total_frames': total, 'cues': cues}, f)
 
     # master: HPF -> presence EQ -> compressor -> loudness normalisation (-14 LUFS like TikTok/Shorts) -> stereo 48 kHz
     with tempfile.TemporaryDirectory() as td:
@@ -144,12 +174,13 @@ async def main():
             w.writeframes((np.clip(track, -1, 1) * 32767).astype('<i2').tobytes())
         chain = ('highpass=f=75,equalizer=f=220:t=q:w=1.0:g=1.5,equalizer=f=3200:t=q:w=1.1:g=2.5,'
                  'acompressor=threshold=-21dB:ratio=3:attack=6:release=90:makeup=4,'
-                 'loudnorm=I=-14:TP=-1.5:LRA=8,volume=-2.5dB,aresample=48000,pan=stereo|c0=c0|c1=c0,atrim=0:60,apad=whole_dur=60')
+                 f'loudnorm=I=-14:TP=-1.5:LRA=8,volume=-2.5dB,aresample=48000,pan=stereo|c0=c0|c1=c0,atrim=0:{L:.3f},apad=whole_dur={L:.3f}')
         subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', raw, '-af', chain, '-ar', '48000', os.path.join(OUT, 'voiceover.wav')], check=True)
     subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', os.path.join(OUT, 'voiceover.wav'), '-c:a', 'libmp3lame', '-b:a', '192k', os.path.join(OUT, 'voiceover.mp3')], check=True)
     with open(os.path.join(OUT, 'voice_words.json'), 'w') as f:
-        json.dump({'voice': VOICE, 'scenes': report}, f, ensure_ascii=False, indent=1)
-    print('wrote out/voiceover.wav, out/voiceover.mp3, out/voice_words.json')
+        json.dump({'voice': VOICE, 'fps': FPS, 'total_seconds': round(L, 3), 'scenes': report}, f, ensure_ascii=False, indent=1)
+    print('cues:', cues)
+    print('wrote out/voiceover.wav, out/voiceover.mp3, out/voice_words.json, src/scene_timing.json')
 
 
 asyncio.run(main())

@@ -8,10 +8,29 @@
 // also turn it into .srt / .json for re-timing against a real voice-over.
 
 export const FPS = 30;
-export const SCENE_SECONDS = 5;
+export const SCENE_SECONDS = 5;                      // DESIGN length of a scene: every scene animation is authored over 0..5 s
 export const SCENE_FRAMES = FPS * SCENE_SECONDS;
 export const SCENE_COUNT = 12;
-export const TOTAL_FRAMES = SCENE_FRAMES * SCENE_COUNT;
+
+// The scenes are cut to the length of their voice-over line (src/scene_timing.json, written by make_voiceover.py):
+// the 0..5 s animation of a scene is played over its real duration, so there is no dead air between the lines.
+let SCENE_FRAME_LIST = Array.from({ length: SCENE_COUNT }, () => SCENE_FRAMES);
+let CUES = {};
+/** list: frames per scene (12 ints); cues: voice-local seconds of a few spoken words that drive visual beats. */
+export function setSceneTiming(list, cues = {}) { SCENE_FRAME_LIST = list.slice(); CUES = cues; }
+export const sceneFrameList = () => SCENE_FRAME_LIST.slice();
+export const totalFrames = () => SCENE_FRAME_LIST.reduce((a, b) => a + b, 0);
+export const sceneStartsSeconds = () => { let s = 0; return SCENE_FRAME_LIST.map((n) => { const r = s / FPS; s += n; return r; }); };
+export const getCues = () => CUES;
+/** frame -> { scene, tau (real seconds into the scene), dur (real scene length), k (design-seconds per real second) } */
+export function locate(f) {
+  let s = 0;
+  for (let i = 0; i < SCENE_COUNT; i++) {
+    const n = SCENE_FRAME_LIST[i];
+    if (f < s + n || i === SCENE_COUNT - 1) { const dur = n / FPS; return { scene: i, tau: (f - s) / FPS, dur, k: SCENE_SECONDS / dur }; }
+    s += n;
+  }
+}
 
 // VO speaks inside [voStart, voEnd] of each scene; the caption stays up until the cut.
 const VO_START = 0.12;

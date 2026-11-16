@@ -11,7 +11,9 @@ const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, v, i, arr) => (v.startsWith('--') ? [...a, [v.slice(2), arr[i + 1] && !arr[i + 1].startsWith('--') ? arr[i + 1] : 'true']] : a), []));
-const OUT = path.resolve(args.out || 'captions_frames'), WORKERS = parseInt(args.workers || '3', 10), N = 1800;
+const OUT = path.resolve(args.out || 'captions_frames'), WORKERS = parseInt(args.workers || '3', 10);
+let N = 1800;
+try { N = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'scene_timing.json'), 'utf8')).total_frames; } catch (e) { /* uniform 5 s scenes */ }
 fs.mkdirSync(OUT, { recursive: true });
 if (args.force) for (const f of fs.readdirSync(OUT)) fs.unlinkSync(path.join(OUT, f));
 

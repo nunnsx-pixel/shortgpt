@@ -1,48 +1,48 @@
 1
-00:00:00,000 --> 00:00:04,960
+00:00:00,000 --> 00:00:05,127
 Tudo o que te ensinaram sobre o GPS... está TOTALMENTE errado.
 
 2
-00:00:05,000 --> 00:00:09,960
+00:00:05,167 --> 00:00:08,727
 A maioria acha que o celular manda o sinal...
 
 3
-00:00:10,000 --> 00:00:14,960
+00:00:08,767 --> 00:00:13,027
 ...para o espaço e o satélite te acha... mas é o oposto!
 
 4
-00:00:15,000 --> 00:00:19,960
+00:00:13,067 --> 00:00:17,460
 O seu celular não manda nada para cima. Ele apenas escuta.
 
 5
-00:00:20,000 --> 00:00:24,960
+00:00:17,500 --> 00:00:20,760
 Satélites no espaço enviam a hora exata do sinal...
 
 6
-00:00:25,000 --> 00:00:29,960
+00:00:20,800 --> 00:00:25,360
 ...e o celular desenha uma esfera gigante ao redor dele.
 
 7
-00:00:30,000 --> 00:00:34,960
+00:00:25,400 --> 00:00:30,360
 Com um satélite você está em qualquer lugar. Com três, a área diminui!
 
 8
-00:00:35,000 --> 00:00:39,960
+00:00:30,400 --> 00:00:33,793
 Mas é o quarto satélite que muda tudo...
 
 9
-00:00:40,000 --> 00:00:44,960
+00:00:33,833 --> 00:00:38,693
 Ele cruza todas as esferas e crava sua altitude exata.
 
 10
-00:00:45,000 --> 00:00:49,960
+00:00:38,733 --> 00:00:41,893
 Bizarro pensar que o mapa do seu bolso...
 
 11
-00:00:50,000 --> 00:00:54,960
+00:00:41,933 --> 00:00:45,293
 ...funciona conversando direto com o espaço sideral!
 
 12
-00:00:55,000 --> 00:00:59,960
+00:00:45,333 --> 00:00:49,760
 Curtiu? Segue para mais curiosidades de tecnologia!
 

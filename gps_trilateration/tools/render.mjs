@@ -21,7 +21,9 @@ const QUALITY = parseInt(args.quality || '95', 10);
 const FORMAT = args.format || 'jpeg';
 const CAPTIONS = args.captions || 'burn';      // burn = captions in the frame (preview); none = bare 3D frames (use render_captions.mjs overlay)
 const frames = [];
-for (const part of (args.frames || '0-1799').split(',')) {
+let TOTAL = 1800;
+try { TOTAL = JSON.parse(fs.readFileSync(path.join(ROOT, 'src', 'scene_timing.json'), 'utf8')).total_frames; } catch (e) { /* uniform 5 s scenes */ }
+for (const part of (args.frames || `0-${TOTAL - 1}`).split(',')) {
   const [a, b] = part.split('-').map(Number); for (let i = a; i <= (b ?? a); i++) frames.push(i);
 }
 fs.mkdirSync(OUT, { recursive: true });

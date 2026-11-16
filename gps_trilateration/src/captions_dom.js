@@ -1,9 +1,11 @@
 // DOM caption renderer shared by the 3D page (burned-in preview) and the transparent caption-overlay page.
-import { wordsOfScene, setTiming } from './captions.js';
+import { wordsOfScene, setTiming, setSceneTiming } from './captions.js';
 import { clamp, smooth } from './util.js';
 
-export async function loadTiming(url = './src/caption_timing.json') {
-  try { const r = await fetch(url); if (r.ok) setTiming(await r.json()); } catch (e) { /* estimated timings are used */ }
+/** Loads src/scene_timing.json (scene lengths + voice cues) and src/caption_timing.json (word timings) when present. */
+export async function loadTiming() {
+  try { const r = await fetch('./src/scene_timing.json'); if (r.ok) { const j = await r.json(); setSceneTiming(j.frames, j.cues || {}); } } catch (e) { /* uniform 5 s scenes */ }
+  try { const r = await fetch('./src/caption_timing.json'); if (r.ok) setTiming(await r.json()); } catch (e) { /* estimated word timings */ }
 }
 
 export function makeCaptions(capEl) {

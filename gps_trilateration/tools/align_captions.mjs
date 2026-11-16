@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SCENES, SCENE_SECONDS, parseScene } from '../src/captions.js';
+import { SCENES, parseScene } from '../src/captions.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const voice = JSON.parse(fs.readFileSync(path.join(ROOT, 'out', 'voice_words.json'), 'utf8'));
@@ -17,7 +17,8 @@ const r3 = (x) => Math.round(x * 1000) / 1000;
 
 const out = []; const report = [];
 SCENES.forEach((sc, i) => {
-  const base = i * SCENE_SECONDS, vw = voice.scenes[i].words.map((w) => ({ n: norm(w.text), start: w.start - base, end: w.end - base }));
+  const base = voice.scenes[i].scene_start, dur = voice.scenes[i].scene_duration;          // real start / length of this scene
+  const vw = voice.scenes[i].words.map((w) => ({ n: norm(w.text), start: w.start - base, end: w.end - base }));
   const cw = parseScene(i);
   const match = new Array(cw.length).fill(null);
   let p = 0;
@@ -39,8 +40,8 @@ SCENES.forEach((sc, i) => {
       t[k] = { start: lo + idx * step, end: lo + (idx + 1) * step };
     } else {                                                // trailing words: follow the last spoken word
       const lastEnd = a >= 0 ? t[a].end : 0.3, idx = k - a - 1, m = cw.length - 1 - a;
-      const step = Math.min(0.30, Math.max(0.12, (4.8 - lastEnd - 0.03) / (m + 0.6)));   // squeeze the unspoken tail in before the cut
-      const s0 = Math.min(4.85, lastEnd + 0.03 + idx * step); t[k] = { start: s0, end: s0 + step };
+      const step = Math.min(0.30, Math.max(0.12, (dur - 0.2 - lastEnd - 0.03) / (m + 0.6)));   // squeeze the unspoken tail in before the cut
+      const s0 = Math.min(dur - 0.15, lastEnd + 0.03 + idx * step); t[k] = { start: s0, end: s0 + step };
     }
   }
   for (let k = 1; k < t.length; k++) if (t[k].start < t[k - 1].start) t[k].start = t[k - 1].start;   // monotonic

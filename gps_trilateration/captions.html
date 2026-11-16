@@ -27,11 +27,12 @@
 <div id="stage"><div id="captions"></div></div>
 <script type="module">
   import { makeCaptions, loadTiming } from './src/captions_dom.js';
-  import { SCENE_FRAMES, FPS, TOTAL_FRAMES } from './src/captions.js';
+  import { FPS, totalFrames, locate } from './src/captions.js';
   await Promise.all([document.fonts.load('700 40px Montserrat'), document.fonts.load('800 40px Montserrat')]);
   await loadTiming();
   const update = makeCaptions(document.getElementById('captions'));
-  window.renderFrame = (f) => { f = Math.max(0, Math.min(TOTAL_FRAMES - 1, Math.round(f))); update(Math.floor(f / SCENE_FRAMES), (f % SCENE_FRAMES) / FPS); };
+  window.renderFrame = (f) => { f = Math.max(0, Math.min(totalFrames() - 1, Math.round(f))); const L = locate(f); update(L.scene, L.tau); };
+  window.__total = totalFrames();
   window.__ready = true;
 </script>
 </body>

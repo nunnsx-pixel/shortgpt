@@ -390,28 +390,32 @@ SCENES[9] = (c) => {
 // ---- 11 [00:50-00:55] O Pin Centralizado --------------------------------------------------
 SCENES[10] = (c) => {
   const { W, FX, t, T } = c;
+  // every beat is anchored on the moment the voice says "espaço" (design time); defaults match the 1:1 timing
+  const dl = (c.cues.s11_lock != null ? c.vt(c.cues.s11_lock) : 1.99) - 1.99;
   floatPhone(c, { rotMul: 0.6, bob: 0.008 });
   const u = smoother(t / 5);
   cam(c, V3(U.x + lerp(-0.1, 0.03, u), U.y + lerp(0.1, 0.05, u), U.z + lerp(3.3, 2.5, u)), V3(U.x, U.y + 0.02, U.z), 36, 0.01 * Math.sin(T * 0.6));
-  const dot = easeOutBack(range(t, 0.55, 1.15), 2), lock = smooth(range(t, 1.9, 2.25));
-  const rip = range(t, 1.95, 3.35), sheet = range(t, 3.0, 3.8);
-  paintScreen(c, { dot, lock, ripple: t >= 1.95 ? rip : -1, sheet, pan: 0 });
+  const dot = easeOutBack(range(t, 0.55 + dl, 1.15 + dl), 2), lock = smooth(range(t, 1.9 + dl, 2.25 + dl));
+  const rip = range(t, 1.95 + dl, 3.35 + dl), sheet = range(t, 3.0 + dl, 3.8 + dl);
+  paintScreen(c, { dot, lock, ripple: t >= 1.95 + dl ? rip : -1, sheet, pan: 0 });
   W.dust.visible = true; W.bokeh.visible = true;
   // 3D cyan ripples radiating from the pin
   W.screenRipples.forEach((r, i) => {
-    const p = range(t, 1.97 + i * 0.22, 3.25 + i * 0.22);
+    const p = range(t, 1.97 + dl + i * 0.22, 3.25 + dl + i * 0.22);
     r.visible = p > 0 && p < 1; r.position.set(0, -0.04, 0.062 + 0.03 * p); r.scale.setScalar(0.06 + p * 0.95); r.material.opacity = 1 - p; r.material.color.set(0x00f0ff).multiplyScalar(2.6 * (1 - p));
   });
-  const pulse = Math.max(0, 1 - Math.abs(t - 2.0) * 2.2);
+  const pulse = Math.max(0, 1 - Math.abs(t - (2.0 + dl)) * 2.2);
   W.aura.intensity = 9 * pulse + 1.5 * sheet; W.aura.position.set(U.x, U.y - 0.05, U.z + 0.9);
   W.phoneGlow.material.opacity = 0.18 * lock + 0.5 * pulse; W.phoneGlow.scale.setScalar(3.4 + 0.6 * pulse);
-  if (t > 1.93 && t < 2.15) FX.punch = 0.8 * (1 - (t - 1.93) / 0.22);
+  if (t > 1.93 + dl && t < 2.15 + dl) FX.punch = 0.8 * (1 - (t - 1.93 - dl) / 0.22);
   FX.dofAperture = 0; FX.bloom = 0.6;
 };
 
 // ---- 12 [00:55-01:00] O Fechamento (CTA) --------------------------------------------------
 SCENES[11] = (c) => {
-  const { W, FX, t, T, camera } = c;
+  const { W, FX, t, T } = c;
+  const H0 = c.cues.s12_curtiu_end != null ? c.vt(c.cues.s12_curtiu_end - 0.08) : 0.62;     // heart pops right after "Curtiu?"
+  const B0 = c.cues.s12_segue != null ? c.vt(c.cues.s12_segue + 0.13) : 1.12;               // button is pressed on "Segue"
   W.phone.visible = true;
   W.phone.position.set(U.x, U.y + Math.sin(T * 1.1) * 0.03, U.z);
   W.phone.rotation.set(0.1 * Math.sin(T * 0.7 + 1), 0.38 * Math.sin(T * 0.9), 0.04 * Math.sin(T * 0.8));
@@ -423,21 +427,21 @@ SCENES[11] = (c) => {
   W.aura.intensity = 2; W.aura.position.set(U.x, U.y, U.z + 1.0);
   // orbiting UI: frosted-glass follow button and a neon heart
   W.cta.visible = true;
-  const kb = easeOutBack(range(t, 0.3, 0.85)), kh = easeOutBack(range(t, 0.05, 0.55));
-  const press = range(t, 1.12, 1.4), pressK = t >= 1.12 && t < 1.5 ? 1 - 0.1 * Math.sin(Math.PI * range(t, 1.12, 1.5)) : 1;
-  const done = t >= 1.3;
+  const kb = easeOutBack(range(t, Math.max(0.02, B0 - 0.85), Math.max(0.5, B0 - 0.3))), kh = easeOutBack(range(t, Math.max(0.02, H0 - 0.6), Math.max(0.4, H0 - 0.1)));
+  const press = range(t, B0, B0 + 0.28), pressK = t >= B0 && t < B0 + 0.38 ? 1 - 0.1 * Math.sin(Math.PI * range(t, B0, B0 + 0.38)) : 1;
+  const done = t >= B0 + 0.18;
   W.drawBtn(done, 0);
   const ob = T * 0.85 + 2.3, oh = T * 0.85 + 2.3 + Math.PI;
   const rad = 0.8;
   W.btn.position.set(U.x + Math.sin(ob) * rad * 0.9, U.y - 0.92 + 0.05 * Math.sin(T * 1.7), U.z + Math.cos(ob) * rad * 1.25 + 0.2);
   W.btn.lookAt(c.CAM.pos); W.btn.rotateY(0.18 * Math.sin(T)); W.btn.scale.setScalar(0.56 * Math.max(kb, 0.001) * pressK * (done ? 1.04 : 1));
-  const beat = t >= 0.62 ? 1 + 0.2 * Math.max(0, Math.sin((t - 0.62) * 9)) * Math.exp(-(t - 0.62) * 0.9) : 1;
+  const beat = t >= H0 ? 1 + 0.2 * Math.max(0, Math.sin((t - H0) * 9)) * Math.exp(-(t - H0) * 0.9) : 1;
   W.heart.position.set(U.x + Math.sin(oh) * rad * 0.9, U.y + 0.62 + 0.06 * Math.sin(T * 1.4), U.z + Math.cos(oh) * rad * 1.25 + 0.2);
-  W.heart.lookAt(c.CAM.pos); W.heart.rotateY(0.3 * Math.sin(T * 1.3)); W.heart.scale.setScalar(0.34 * Math.max(kh, 0.001) * beat * (t >= 0.62 && t < 0.82 ? 1 + 0.5 * Math.sin(Math.PI * range(t, 0.62, 0.82)) : 1));
-  W.heartMat.emissiveIntensity = 1.7 + (t >= 0.62 ? 1.2 * Math.exp(-(t - 0.62)) : 0);
+  W.heart.lookAt(c.CAM.pos); W.heart.rotateY(0.3 * Math.sin(T * 1.3)); W.heart.scale.setScalar(0.34 * Math.max(kh, 0.001) * beat * (t >= H0 && t < H0 + 0.2 ? 1 + 0.5 * Math.sin(Math.PI * range(t, H0, H0 + 0.2)) : 1));
+  W.heartMat.emissiveIntensity = 1.7 + (t >= H0 ? 1.2 * Math.exp(-(t - H0)) : 0);
   W.heartGlow.position.copy(W.heart.position); W.heartGlow.material.opacity = 0.55 * kh;
   W.heartGlow.scale.setScalar(1.6 + 0.4 * Math.sin(T * 5));
-  if (t >= 0.62) { W.burst.visible = true; W.burst.position.copy(W.heart.position); W.burst.material.uniforms.uTime.value = (t - 0.62) * 0.28; W.burst.material.uniforms.uSize.value = 0.012; W.burst.material.uniforms.uAlpha.value = 1.4 * Math.exp(-(t - 0.62) * 0.9); W.burst.material.uniforms.uColor.value.set(0xff6a8a); }
+  if (t >= H0) { W.burst.visible = true; W.burst.position.copy(W.heart.position); W.burst.material.uniforms.uTime.value = (t - H0) * 0.28; W.burst.material.uniforms.uSize.value = 0.012; W.burst.material.uniforms.uAlpha.value = 1.4 * Math.exp(-(t - H0) * 0.9); W.burst.material.uniforms.uColor.value.set(0xff6a8a); }
   FX.dofFocus = 5.1; FX.dofAperture = 8; FX.bloom = 0.6;
 };
 

@@ -8,7 +8,7 @@ import { Pass, FullScreenQuad } from 'three/addons/postprocessing/Pass.js';
 import { createWorld } from './world.js';
 import * as A from './assets.js';
 import * as S from './shaders.js';
-import { SCENE_FRAMES, FPS, TOTAL_FRAMES } from './captions.js';
+import { FPS, totalFrames, locate, getCues } from './captions.js';
 import { makeCaptions, loadTiming } from './captions_dom.js';
 import { runScene } from './timeline.js';
 import { clamp, smooth, shake } from './util.js';
@@ -74,12 +74,15 @@ const FX0 = () => ({ glitch: 0, chroma: 0.0011, radial: 0, radialC: [0.5, 0.5], 
 const CAM = { pos: new THREE.Vector3(0, 0, 5), tgt: new THREE.Vector3(), fov: 40, roll: 0, near: 0.05, up: null };
 
 function renderFrame(f) {
-  f = clamp(Math.round(f), 0, TOTAL_FRAMES - 1);
-  const sc = Math.floor(f / SCENE_FRAMES), t = (f % SCENE_FRAMES) / FPS, T = f / FPS;
+  f = clamp(Math.round(f), 0, totalFrames() - 1);
+  const L = locate(f), sc = L.scene, T = f / FPS;
+  const t = L.tau * L.k;                       // design time (0..5 s) of the scene animation
+  const vt = (v) => v * L.k;                   // a voice-local time (real seconds) -> design time
+  const cues = getCues();
   W.reset();
   const FX = FX0();
   Object.assign(CAM, { fov: 40, roll: 0, near: 0.05, up: null }); CAM.pos.set(0, 0, 5); CAM.tgt.set(0, 0, 0);
-  runScene(sc, { W, FX, CAM, camera, t, T, sc, f });
+  runScene(sc, { W, FX, CAM, camera, t, T, sc, f, vt, cues, k: L.k, dur: L.dur });
 
   // camera (with a very light hand-held drift)
   const dist = CAM.pos.distanceTo(CAM.tgt), amp = 0.0022 * dist;
@@ -107,7 +110,7 @@ function renderFrame(f) {
   const fu = finalPass.uniforms; fu.uTime.value = T; fu.uGlitch.value = FX.glitch; fu.uChroma.value = FX.chroma; fu.uRadial.value = FX.radial; fu.uRadialC.value.set(FX.radialC[0], FX.radialC[1]);
   fu.uDir.value.set(FX.dir[0], FX.dir[1]); fu.uDirAmt.value = FX.dirAmt; fu.uVig.value = FX.vig; fu.uGrain.value = FX.grain; fu.uFlash.value = FX.flash; fu.uPunch.value = FX.punch; fu.uFade.value = FX.fade; fu.uScan.value = FX.scan;
 
-  updateCaption(sc, t);
+  updateCaption(sc, L.tau);                    // captions follow real (voice) time
   composer.render(1 / FPS);
   return { scene: sc, t, f };
 }
@@ -120,7 +123,7 @@ async function init() {
   W.reset();
   window.renderFrame = renderFrame;
   window.__dbg = { W, scene, camera, composer, renderer, bloom, dof, finalPass };
-  window.__info = { TOTAL_FRAMES, SCENE_FRAMES, FPS, W: W_PX, H: H_PX };
+  window.__info = { total: totalFrames(), FPS, W: W_PX, H: H_PX };
   window.__ready = true;
   const f = params.get('f');
   if (f !== null) renderFrame(parseFloat(f));
