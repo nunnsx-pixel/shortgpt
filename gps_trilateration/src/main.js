@@ -53,7 +53,7 @@ const bloom = new UnrealBloomPass(new THREE.Vector2(W_PX, H_PX), 0.55, 0.6, 0.9)
 const finalPass = new ShaderPass({
   uniforms: {
     tDiffuse: { value: null }, uTime: { value: 0 }, uRes: { value: new THREE.Vector2(W_PX, H_PX) }, uGlitch: { value: 0 }, uChroma: { value: 0.001 }, uRadial: { value: 0 }, uRadialC: { value: new THREE.Vector2(0.5, 0.5) },
-    uDir: { value: new THREE.Vector2(1, 0) }, uDirAmt: { value: 0 }, uVig: { value: 0.55 }, uGrain: { value: 0.022 }, uFlash: { value: 0 }, uFade: { value: 0 }, uScan: { value: 0 },
+    uDir: { value: new THREE.Vector2(1, 0) }, uDirAmt: { value: 0 }, uVig: { value: 0.55 }, uGrain: { value: 0.022 }, uFlash: { value: 0 }, uPunch: { value: 0 }, uFade: { value: 0 }, uScan: { value: 0 },
   },
   vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.); }',
   fragmentShader: S.finalFrag,
@@ -84,7 +84,7 @@ function updateCaption(sc, t) {
 
 // ---------------------------------------------------------------- frame renderer
 let W = null;
-const FX0 = () => ({ glitch: 0, chroma: 0.0011, radial: 0, radialC: [0.5, 0.5], dir: [1, 0], dirAmt: 0, vig: 0.5, grain: 0.022, flash: 0, fade: 0, scan: 0, bloom: 0.55, dofFocus: 10, dofAperture: 0 });
+const FX0 = () => ({ glitch: 0, chroma: 0.0011, radial: 0, radialC: [0.5, 0.5], dir: [1, 0], dirAmt: 0, vig: 0.5, grain: 0.022, flash: 0, punch: 0, fade: 0, scan: 0, bloom: 0.55, dofFocus: 10, dofAperture: 0 });
 const CAM = { pos: new THREE.Vector3(0, 0, 5), tgt: new THREE.Vector3(), fov: 40, roll: 0, near: 0.05, up: null };
 
 function renderFrame(f) {
@@ -119,7 +119,7 @@ function renderFrame(f) {
   dof.enabled = FX.dofAperture > 0.5;
   bloom.strength = FX.bloom;
   const fu = finalPass.uniforms; fu.uTime.value = T; fu.uGlitch.value = FX.glitch; fu.uChroma.value = FX.chroma; fu.uRadial.value = FX.radial; fu.uRadialC.value.set(FX.radialC[0], FX.radialC[1]);
-  fu.uDir.value.set(FX.dir[0], FX.dir[1]); fu.uDirAmt.value = FX.dirAmt; fu.uVig.value = FX.vig; fu.uGrain.value = FX.grain; fu.uFlash.value = FX.flash; fu.uFade.value = FX.fade; fu.uScan.value = FX.scan;
+  fu.uDir.value.set(FX.dir[0], FX.dir[1]); fu.uDirAmt.value = FX.dirAmt; fu.uVig.value = FX.vig; fu.uGrain.value = FX.grain; fu.uFlash.value = FX.flash; fu.uPunch.value = FX.punch; fu.uFade.value = FX.fade; fu.uScan.value = FX.scan;
 
   updateCaption(sc, t);
   composer.render(1 / FPS);

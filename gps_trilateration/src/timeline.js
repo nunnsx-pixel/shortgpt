@@ -141,7 +141,7 @@ SCENES[2] = (c) => {
   if (t > 0.4 && t < 0.75) g = 0.9 * (1 - (t - 0.4) / 0.35); [1.7, 2.6, 3.5, 4.3].forEach((s) => { if (t > s && t < s + 0.12) g = Math.max(g, 0.5); });
   FX.glitch = g; FX.chroma = 0.0012 + 0.003 * (t > 0.4 ? sq * 0.5 : 0);
   FX.dofFocus = campos.distanceTo(s1); FX.dofAperture = 22; FX.bloom = 0.6;
-  if (t > 0.38 && t < 0.5) FX.flash = 0.35 * (1 - (t - 0.38) / 0.12);
+  if (t > 0.38 && t < 0.52) FX.punch = 1.3 * (1 - (t - 0.38) / 0.14);
   W.dust.visible = false;
 };
 
@@ -240,7 +240,7 @@ SCENES[5] = (c) => {
   W.earthUniforms.uRingAmt.value = smooth(range(t, 2.9, 3.8));
   beacon(c, 1);
   if (hit > 0 && hit < 1) { W.ring(0, U, camPos, 0.5 + hit * 5, 0x2f8bff, 1 - hit, 3); W.ring(1, U, camPos, 0.3 + hit * 3, 0xffffff, (1 - hit) * 0.8, 2.5); }
-  if (t > 2.9 && t < 3.15) FX.flash = 0.14 * (1 - (t - 2.9) / 0.25);
+  if (t > 2.9 && t < 3.1) FX.punch = 0.7 * (1 - (t - 2.9) / 0.2);
   FX.dofFocus = camPos.distanceTo(WIDE_C); FX.dofAperture = 0; FX.bloom = 0.6;
 };
 
@@ -304,7 +304,7 @@ SCENES[7] = (c) => {
   // the ghost point is eliminated by the 4th sphere
   const gOut = range(t, 2.2, 2.7);
   if (gOut < 1) { W.flashSprite.visible = true; W.flashSprite.material.color.set(0xff003c); W.flashSprite.material.opacity = (0.5 + 0.6 * Math.sin(gOut * Math.PI)) * (1 - gOut); W.flashSprite.scale.setScalar(2.4 + 3 * gOut); W.flashSprite.position.copy(GHOST); }
-  if (t > 1.0 && t < 1.2) FX.flash = 0.1;
+  if (t > 1.0 && t < 1.2) FX.punch = 0.6 * (1 - (t - 1.0) / 0.2);
   FX.dofFocus = camPos.distanceTo(U); FX.dofAperture = 55 * smooth(range(t, 0.2, 2.0)); FX.bloom = 0.65;
 };
 
@@ -334,14 +334,14 @@ SCENES[8] = (c) => {
   W.phone.visible = true; W.phone.position.copy(U); W.phone.rotation.set(0, 0.2, 0); W.phone.scale.setScalar(0.4);
   paintScreen(c, { dot: 1, lock: 1, pan: 0 });
   // flash at t=1.8
-  const pre = smooth(range(t, 1.55, 1.85)), post = Math.exp(-Math.max(0, t - 1.85) * 2.6);
+  const pre = smooth(range(t, 1.68, 1.85)), post = Math.exp(-Math.max(0, t - 1.85) * 6.0);
   FX.flash = t < 1.85 ? 1.3 * pre * pre : 1.3 * post;
   W.flashSprite.visible = true; W.flashSprite.material.color.set(0xffffff);
   W.flashSprite.material.opacity = t < 1.85 ? pre : post; W.flashSprite.scale.setScalar(t < 1.85 ? 0.3 + 3 * pre : 3.3 + (t - 1.85) * 1.2); W.flashSprite.position.copy(U);
   // light column + sparkling particles
   if (t >= 1.8) {
     const k = easeOut(range(t, 1.8, 2.4));
-    W.beamCol.visible = true; W.beamCol.userData.set(U.clone().add(V3(0, -0.4, 0)), U.clone().add(V3(0, 40 * k, 0)), T, { amt: 0.8 * (0.9 + 0.1 * Math.sin(T * 7)), pulse: 0.3, widthMul: 0.35 });
+    W.beamCol.visible = true; W.beamCol.userData.set(U.clone().add(V3(0, -0.4, 0)), U.clone().add(V3(0, 40 * k, 0)), T, { amt: 0.55 * (0.9 + 0.1 * Math.sin(T * 7)), pulse: 0.3, widthMul: 0.3 });
     W.burst.visible = true; W.burst.position.copy(U); W.burst.material.uniforms.uTime.value = (t - 1.8) * 0.5; W.burst.material.uniforms.uAlpha.value = 1.6 * Math.exp(-(t - 1.8) * 0.5);
     W.sparkle.visible = true; W.sparkle.position.copy(U).add(V3(0, 1.2, 0)); W.sparkle.material.uniforms.uTime.value = T;
     W.sparkle.scale.setScalar(1.0);
@@ -381,7 +381,7 @@ SCENES[9] = (c) => {
   W.dust.visible = false;
   // impact ripples on the ground where the beam ends
   for (let k = 0; k < 3; k++) { const ph = ((T * 0.8) + k / 3) % 1; W.ring(k, B.clone().add(V3(0, 0.05, 0)), B.clone().add(V3(0, 5, 0)), 0.4 + ph * 3.2, 0x00f0ff, (1 - ph) * 0.8, 2.6); }
-  if (t > 3.0 && t < 3.2) FX.flash = 0.25 * (1 - (t - 3.0) / 0.2);
+  if (t > 3.0 && t < 3.2) FX.punch = 1.0 * (1 - (t - 3.0) / 0.2);
   const fall = 1 - smooth(range(t, 2.6, 3.1));
   FX.dir = [0, 1]; FX.dirAmt = 0.1 * fall * range(t, 0, 0.6); FX.radial = 0.05 * fall; FX.radialC = [0.5, 0.45];
   FX.dofFocus = t < 3.1 ? Math.max(6, y * 0.6) : 10; FX.dofAperture = t < 3.1 ? 8 : 14; FX.bloom = 0.65; FX.chroma = 0.0018;
@@ -405,7 +405,7 @@ SCENES[10] = (c) => {
   const pulse = Math.max(0, 1 - Math.abs(t - 1.65) * 2.2);
   W.aura.intensity = 9 * pulse + 1.5 * sheet; W.aura.position.set(U.x, U.y - 0.05, U.z + 0.9);
   W.phoneGlow.material.opacity = 0.18 * lock + 0.5 * pulse; W.phoneGlow.scale.setScalar(3.4 + 0.6 * pulse);
-  if (t > 1.58 && t < 1.8) FX.flash = 0.12 * (1 - (t - 1.58) / 0.22);
+  if (t > 1.58 && t < 1.8) FX.punch = 0.8 * (1 - (t - 1.58) / 0.22);
   FX.dofAperture = 0; FX.bloom = 0.6;
 };
 

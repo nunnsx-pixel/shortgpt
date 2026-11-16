@@ -12,7 +12,7 @@ Vídeo explicativo para TikTok / YouTube Shorts: **1080×1920 (9:16), 30 fps, 60
 
 ## Resultado
 
-`out/como_o_gps_funciona.mp4` (H.264 High, yuv420p, BT.709, `+faststart`) · `out/captions.srt` · `out/captions_words.srt` · `out/captions.json`
+`out/como_o_gps_funciona.mp4` (≈48 MB; H.264 High, yuv420p, BT.709, ~6,5 Mbps, `+faststart`, áudio AAC silencioso) · `out/captions.srt` · `out/captions_words.srt` · `out/captions.json`
 
 ## Como gerar
 
@@ -23,7 +23,7 @@ npm install                      # three, world-atlas (continentes reais), fonte
 
 node tools/render.mjs --frames 0-1799 --workers 3 --out frames     # ~1 h em CPU (SwiftShader), retomável
 node tools/export_captions.mjs                                      # SRT/JSON com os tempos
-bash tools/encode.sh                                                # MP4 final (60 s, áudio silencioso)
+bash tools/encode.sh                                                # MP4 final (60 s, áudio silencioso, ~6,5 Mbps)
 ```
 
 Pré-visualização rápida de quadros soltos (metade da resolução):

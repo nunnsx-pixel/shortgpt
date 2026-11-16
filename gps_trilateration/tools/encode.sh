@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Encodes frames/frame_%05d.jpg (30 fps, 1080x1920) into a 60 s H.264 MP4 with a SILENT stereo AAC track
 # (no TTS). Captions are already burned into the frames.
+# hqdn3d removes the render's film grain/dither, which x264 cannot compress; bitrate is capped at ~6.5 Mbps
+# (typical TikTok / Shorts upload range).
 #   bash tools/encode.sh [output.mp4]
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -11,8 +13,8 @@ if [ "$N" -ne 1800 ]; then echo "expected 1800 frames in frames/, found $N" >&2;
 ffmpeg -y -hide_banner -loglevel error -stats \
   -framerate 30 -i frames/frame_%05d.jpg \
   -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=44100 \
-  -vf "scale=in_color_matrix=bt601:in_range=pc:out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p" \
-  -c:v libx264 -preset slow -crf 17 -profile:v high -level 4.2 -r 30 -g 60 \
+  -vf "scale=in_color_matrix=bt601:in_range=pc:out_color_matrix=bt709:out_range=tv:flags=accurate_rnd+full_chroma_int,format=yuv420p,hqdn3d=1.6:1.6:5:5" \
+  -c:v libx264 -preset medium -crf 23 -maxrate 6500k -bufsize 13M -profile:v high -level 4.2 -r 30 -g 60 \
   -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv \
   -c:a aac -b:a 128k -t 60 -shortest -movflags +faststart "$OUT"
 ffprobe -v error -show_entries stream=codec_name,width,height,r_frame_rate,nb_frames,duration -of default=nw=1 "$OUT"

@@ -269,7 +269,7 @@ uniform sampler2D tDiffuse;
 uniform float uTime; uniform vec2 uRes;
 uniform float uGlitch; uniform float uChroma; uniform float uRadial; uniform vec2 uRadialC;
 uniform vec2 uDir; uniform float uDirAmt;
-uniform float uVig; uniform float uGrain; uniform float uFlash; uniform float uFade; uniform float uScan;
+uniform float uVig; uniform float uGrain; uniform float uFlash; uniform float uFade; uniform float uScan; uniform float uPunch;
 float h11(float n){ return fract(sin(n * 91.3458) * 47453.5453); }
 float h21(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
 vec3 samp(vec2 uv){ return texture2D(tDiffuse, uv).rgb; }
@@ -320,6 +320,7 @@ void main(){
   // film grain / dither (also kills banding in the dark gradients)
   float g = h21(vUv * uRes + fract(uTime) * 91.7) - .5;
   col += g * uGrain;
+  col *= 1. + uPunch;                 // multiplicative exposure kick: keeps contrast (no grey veil)
   col += vec3(uFlash);
   col *= 1. - uFade;
   gl_FragColor = vec4(max(col, 0.), 1.);
