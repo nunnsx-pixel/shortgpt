@@ -3,13 +3,16 @@
 //   out/captions.srt        - one cue per scene (what is burned into the video)
 //   out/captions_words.srt  - word-by-word cues (karaoke timing)
 //   out/captions.json       - full data (scene, VO line, per-word start/end in absolute seconds)
-// Use these to re-time everything if you later record or generate a real voice-over.
+// Timings are the real voice-over timings (src/caption_timing.json) when present, else the pace-based estimate.
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SCENES, SCENE_SECONDS, wordsOfScene, plain } from '../src/captions.js';
+import { SCENES, SCENE_SECONDS, wordsOfScene, plain, setTiming } from '../src/captions.js';
 
-const OUT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'out');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const OUT = path.join(ROOT, 'out');
+const TF = path.join(ROOT, 'src', 'caption_timing.json');
+if (fs.existsSync(TF)) setTiming(JSON.parse(fs.readFileSync(TF, 'utf8')));      // real voice-over timings
 fs.mkdirSync(OUT, { recursive: true });
 const ts = (s) => {
   const ms = Math.round(s * 1000), h = Math.floor(ms / 3600000), m = Math.floor((ms % 3600000) / 60000), sec = Math.floor((ms % 60000) / 1000), r = ms % 1000;

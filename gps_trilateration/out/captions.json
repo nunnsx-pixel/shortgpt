@@ -11,67 +11,67 @@
         "text": "Tudo",
         "accent": null,
         "start": 0.12,
-        "end": 0.458
+        "end": 0.359
       },
       {
         "text": "o",
         "accent": null,
-        "start": 0.458,
-        "end": 0.626
+        "start": 0.319,
+        "end": 0.407
       },
       {
         "text": "que",
         "accent": null,
-        "start": 0.626,
-        "end": 0.907
+        "start": 0.366,
+        "end": 0.482
       },
       {
         "text": "te",
         "accent": null,
-        "start": 0.907,
-        "end": 1.133
+        "start": 0.442,
+        "end": 0.558
       },
       {
         "text": "ensinaram",
         "accent": null,
-        "start": 1.133,
-        "end": 1.751
+        "start": 0.518,
+        "end": 0.947
       },
       {
         "text": "sobre",
         "accent": null,
-        "start": 1.751,
-        "end": 2.145
+        "start": 0.906,
+        "end": 1.174
       },
       {
         "text": "o",
         "accent": null,
-        "start": 2.145,
-        "end": 2.314
+        "start": 1.332,
+        "end": 1.401
       },
       {
         "text": "GPS...",
         "accent": null,
-        "start": 2.314,
-        "end": 2.933
+        "start": 1.361,
+        "end": 1.865
       },
       {
         "text": "está",
         "accent": null,
-        "start": 2.933,
-        "end": 3.27
+        "start": 3.297,
+        "end": 3.618
       },
       {
         "text": "TOTALMENTE",
         "accent": "red",
-        "start": 3.27,
-        "end": 3.945
+        "start": 3.578,
+        "end": 4.118
       },
       {
         "text": "errado.",
         "accent": null,
-        "start": 3.945,
-        "end": 4.62
+        "start": 4.078,
+        "end": 4.472
       }
     ]
   },
@@ -87,55 +87,55 @@
         "text": "A",
         "accent": null,
         "start": 5.12,
-        "end": 5.353
+        "end": 5.25
       },
       {
         "text": "maioria",
         "accent": null,
-        "start": 5.353,
-        "end": 6.051
+        "start": 5.211,
+        "end": 5.659
       },
       {
         "text": "acha",
         "accent": null,
-        "start": 6.051,
-        "end": 6.517
+        "start": 6.188,
+        "end": 6.625
       },
       {
         "text": "que",
         "accent": null,
-        "start": 6.517,
-        "end": 6.904
+        "start": 6.586,
+        "end": 6.715
       },
       {
         "text": "o",
         "accent": null,
-        "start": 6.904,
-        "end": 7.137
+        "start": 6.677,
+        "end": 6.75
       },
       {
         "text": "celular",
         "accent": null,
-        "start": 7.137,
-        "end": 7.836
+        "start": 6.881,
+        "end": 7.386
       },
       {
         "text": "manda",
         "accent": null,
-        "start": 7.836,
-        "end": 8.379
+        "start": 7.347,
+        "end": 7.738
       },
       {
         "text": "o",
         "accent": null,
-        "start": 8.379,
-        "end": 8.611
+        "start": 7.7,
+        "end": 7.784
       },
       {
         "text": "sinal...",
         "accent": null,
-        "start": 8.611,
-        "end": 9.62
+        "start": 7.745,
+        "end": 8.204
       }
     ]
   },
@@ -151,73 +151,73 @@
         "text": "...para",
         "accent": null,
         "start": 10.12,
-        "end": 10.66
+        "end": 10.337
       },
       {
         "text": "o",
         "accent": null,
-        "start": 10.66,
-        "end": 10.84
+        "start": 10.299,
+        "end": 10.371
       },
       {
         "text": "espaço",
         "accent": null,
-        "start": 10.84,
-        "end": 11.32
+        "start": 10.332,
+        "end": 10.884
       },
       {
         "text": "e",
         "accent": null,
-        "start": 11.32,
-        "end": 11.5
+        "start": 10.845,
+        "end": 10.918
       },
       {
         "text": "o",
         "accent": null,
-        "start": 11.5,
-        "end": 11.68
+        "start": 10.879,
+        "end": 10.962
       },
       {
         "text": "satélite",
         "accent": null,
-        "start": 11.68,
-        "end": 12.28
+        "start": 10.924,
+        "end": 11.476
       },
       {
         "text": "te",
         "accent": null,
-        "start": 12.28,
-        "end": 12.52
+        "start": 11.437,
+        "end": 11.61
       },
       {
         "text": "acha...",
         "accent": null,
-        "start": 12.52,
-        "end": 13.24
+        "start": 11.571,
+        "end": 11.978
       },
       {
         "text": "mas",
         "accent": null,
-        "start": 13.24,
-        "end": 13.54
+        "start": 12.328,
+        "end": 12.591
       },
       {
         "text": "é",
         "accent": null,
-        "start": 13.54,
-        "end": 13.72
+        "start": 12.553,
+        "end": 12.816
       },
       {
         "text": "o",
         "accent": null,
-        "start": 13.72,
-        "end": 13.9
+        "start": 12.778,
+        "end": 12.89
       },
       {
         "text": "oposto!",
         "accent": "red",
-        "start": 13.9,
-        "end": 14.62
+        "start": 13.278,
+        "end": 13.891
       }
     ]
   },
@@ -233,67 +233,67 @@
         "text": "O",
         "accent": null,
         "start": 15.12,
-        "end": 15.298
+        "end": 15.274
       },
       {
         "text": "seu",
         "accent": null,
-        "start": 15.298,
-        "end": 15.594
+        "start": 15.236,
+        "end": 15.459
       },
       {
         "text": "celular",
         "accent": null,
-        "start": 15.594,
-        "end": 16.127
+        "start": 15.421,
+        "end": 15.945
       },
       {
         "text": "não",
         "accent": null,
-        "start": 16.127,
-        "end": 16.423
+        "start": 15.907,
+        "end": 16.131
       },
       {
         "text": "manda",
         "accent": null,
-        "start": 16.423,
-        "end": 16.837
+        "start": 16.092,
+        "end": 16.432
       },
       {
         "text": "nada",
         "accent": null,
-        "start": 16.837,
-        "end": 17.192
+        "start": 16.393,
+        "end": 16.767
       },
       {
         "text": "para",
         "accent": null,
-        "start": 17.192,
-        "end": 17.548
+        "start": 16.729,
+        "end": 16.952
       },
       {
         "text": "cima.",
         "accent": null,
-        "start": 17.548,
-        "end": 18.14
+        "start": 16.914,
+        "end": 17.346
       },
       {
         "text": "Ele",
         "accent": null,
-        "start": 18.14,
-        "end": 18.436
+        "start": 17.716,
+        "end": 17.946
       },
       {
         "text": "apenas",
         "accent": null,
-        "start": 18.436,
-        "end": 18.909
+        "start": 17.91,
+        "end": 18.363
       },
       {
         "text": "escuta.",
         "accent": "cyan",
-        "start": 18.909,
-        "end": 19.62
+        "start": 18.327,
+        "end": 19.03
       }
     ]
   },
@@ -309,55 +309,55 @@
         "text": "Satélites",
         "accent": null,
         "start": 20.12,
-        "end": 20.893
+        "end": 20.812
       },
       {
         "text": "no",
         "accent": null,
-        "start": 20.893,
-        "end": 21.175
+        "start": 20.774,
+        "end": 20.892
       },
       {
         "text": "espaço",
         "accent": null,
-        "start": 21.175,
-        "end": 21.737
+        "start": 20.854,
+        "end": 21.305
       },
       {
         "text": "enviam",
         "accent": null,
-        "start": 21.737,
-        "end": 22.3
+        "start": 21.267,
+        "end": 21.718
       },
       {
         "text": "a",
         "accent": null,
-        "start": 22.3,
-        "end": 22.511
+        "start": 21.68,
+        "end": 21.775
       },
       {
         "text": "hora",
         "accent": "cyan",
-        "start": 22.511,
-        "end": 22.933
+        "start": 21.737,
+        "end": 22.028
       },
       {
         "text": "exata",
         "accent": "cyan",
-        "start": 22.933,
-        "end": 23.425
+        "start": 21.989,
+        "end": 22.406
       },
       {
         "text": "do",
         "accent": null,
-        "start": 23.425,
-        "end": 23.706
+        "start": 22.368,
+        "end": 22.498
       },
       {
         "text": "sinal...",
         "accent": null,
-        "start": 23.706,
-        "end": 24.62
+        "start": 22.459,
+        "end": 22.911
       }
     ]
   },
@@ -373,61 +373,61 @@
         "text": "...e",
         "accent": null,
         "start": 25.12,
-        "end": 25.506
+        "end": 25.284
       },
       {
         "text": "o",
         "accent": null,
-        "start": 25.506,
-        "end": 25.699
+        "start": 25.245,
+        "end": 25.34
       },
       {
         "text": "celular",
         "accent": null,
-        "start": 25.699,
-        "end": 26.277
+        "start": 25.302,
+        "end": 25.829
       },
       {
         "text": "desenha",
         "accent": null,
-        "start": 26.277,
-        "end": 26.856
+        "start": 27.48,
+        "end": 28.167
       },
       {
         "text": "uma",
         "accent": null,
-        "start": 26.856,
-        "end": 27.177
+        "start": 28.129,
+        "end": 28.265
       },
       {
         "text": "esfera",
         "accent": "cyan",
-        "start": 27.177,
-        "end": 27.691
+        "start": 28.227,
+        "end": 28.62
       },
       {
         "text": "gigante",
         "accent": "cyan",
-        "start": 27.691,
-        "end": 28.27
+        "start": 28.583,
+        "end": 29.196
       },
       {
         "text": "ao",
         "accent": null,
-        "start": 28.27,
-        "end": 28.527
+        "start": 29.226,
+        "end": 29.385
       },
       {
         "text": "redor",
         "accent": null,
-        "start": 28.527,
-        "end": 28.977
+        "start": 29.415,
+        "end": 29.563
       },
       {
         "text": "dele.",
         "accent": null,
-        "start": 28.977,
-        "end": 29.62
+        "start": 29.593,
+        "end": 29.723
       }
     ]
   },
@@ -443,79 +443,79 @@
         "text": "Com",
         "accent": null,
         "start": 30.12,
-        "end": 30.366
+        "end": 30.318
       },
       {
         "text": "um",
         "accent": null,
-        "start": 30.366,
-        "end": 30.563
+        "start": 30.279,
+        "end": 30.386
       },
       {
         "text": "satélite",
         "accent": null,
-        "start": 30.563,
-        "end": 31.054
+        "start": 30.347,
+        "end": 30.931
       },
       {
         "text": "você",
         "accent": null,
-        "start": 31.054,
-        "end": 31.35
+        "start": 31.131,
+        "end": 31.42
       },
       {
         "text": "está",
         "accent": null,
-        "start": 31.35,
-        "end": 31.645
+        "start": 31.381,
+        "end": 31.659
       },
       {
         "text": "em",
         "accent": null,
-        "start": 31.645,
-        "end": 31.841
+        "start": 31.62,
+        "end": 31.738
       },
       {
         "text": "qualquer",
         "accent": null,
-        "start": 31.841,
-        "end": 32.333
+        "start": 31.7,
+        "end": 32.079
       },
       {
         "text": "lugar.",
         "accent": null,
-        "start": 32.333,
-        "end": 32.874
+        "start": 32.04,
+        "end": 32.431
       },
       {
         "text": "Com",
         "accent": null,
-        "start": 32.874,
-        "end": 33.12
+        "start": 32.701,
+        "end": 33.004
       },
       {
         "text": "três,",
         "accent": null,
-        "start": 33.12,
-        "end": 33.538
+        "start": 32.966,
+        "end": 33.424
       },
       {
         "text": "a",
         "accent": null,
-        "start": 33.538,
-        "end": 33.686
+        "start": 33.627,
+        "end": 33.761
       },
       {
         "text": "área",
         "accent": "cyan",
-        "start": 33.686,
-        "end": 33.981
+        "start": 33.723,
+        "end": 34.049
       },
       {
         "text": "diminui!",
         "accent": "cyan",
-        "start": 33.981,
-        "end": 34.62
+        "start": 34.011,
+        "end": 34.59
       }
     ]
   },
@@ -531,49 +531,49 @@
         "text": "Mas",
         "accent": null,
         "start": 35.12,
-        "end": 35.553
+        "end": 35.387
       },
       {
         "text": "é",
         "accent": null,
-        "start": 35.553,
-        "end": 35.812
+        "start": 35.35,
+        "end": 35.578
       },
       {
         "text": "o",
         "accent": null,
-        "start": 35.812,
-        "end": 36.072
+        "start": 35.541,
+        "end": 35.655
       },
       {
         "text": "quarto",
         "accent": "cyan",
-        "start": 36.072,
-        "end": 36.764
+        "start": 35.617,
+        "end": 36.088
       },
       {
         "text": "satélite",
         "accent": "cyan",
-        "start": 36.764,
-        "end": 37.63
+        "start": 36.051,
+        "end": 36.777
       },
       {
         "text": "que",
         "accent": null,
-        "start": 37.63,
-        "end": 38.062
+        "start": 36.967,
+        "end": 37.177
       },
       {
         "text": "muda",
         "accent": null,
-        "start": 38.062,
-        "end": 38.582
+        "start": 37.14,
+        "end": 37.602
       },
       {
         "text": "tudo...",
         "accent": null,
-        "start": 38.582,
-        "end": 39.62
+        "start": 37.565,
+        "end": 38.028
       }
     ]
   },
@@ -589,61 +589,61 @@
         "text": "Ele",
         "accent": null,
         "start": 40.12,
-        "end": 40.451
+        "end": 40.363
       },
       {
         "text": "cruza",
         "accent": null,
-        "start": 40.451,
-        "end": 40.914
+        "start": 40.325,
+        "end": 40.761
       },
       {
         "text": "todas",
         "accent": null,
-        "start": 40.914,
-        "end": 41.377
+        "start": 40.722,
+        "end": 41.068
       },
       {
         "text": "as",
         "accent": null,
-        "start": 41.377,
-        "end": 41.642
+        "start": 41.029,
+        "end": 41.193
       },
       {
         "text": "esferas",
         "accent": null,
-        "start": 41.642,
-        "end": 42.238
+        "start": 41.154,
+        "end": 41.852
       },
       {
         "text": "e",
         "accent": null,
-        "start": 42.238,
-        "end": 42.436
+        "start": 42.062,
+        "end": 42.244
       },
       {
         "text": "crava",
         "accent": null,
-        "start": 42.436,
-        "end": 42.899
+        "start": 42.206,
+        "end": 42.617
       },
       {
         "text": "sua",
         "accent": null,
-        "start": 42.899,
-        "end": 43.23
+        "start": 43.54,
+        "end": 43.855
       },
       {
         "text": "altitude",
         "accent": "cyan",
-        "start": 43.23,
-        "end": 43.892
+        "start": 43.817,
+        "end": 44.492
       },
       {
         "text": "exata.",
         "accent": null,
-        "start": 43.892,
-        "end": 44.62
+        "start": 44.522,
+        "end": 44.696
       }
     ]
   },
@@ -659,49 +659,49 @@
         "text": "Bizarro",
         "accent": null,
         "start": 45.12,
-        "end": 45.884
+        "end": 45.746
       },
       {
         "text": "pensar",
         "accent": null,
-        "start": 45.884,
-        "end": 46.563
+        "start": 45.708,
+        "end": 46.236
       },
       {
         "text": "que",
         "accent": null,
-        "start": 46.563,
-        "end": 46.988
+        "start": 46.198,
+        "end": 46.346
       },
       {
         "text": "o",
         "accent": null,
-        "start": 46.988,
-        "end": 47.243
+        "start": 46.309,
+        "end": 46.408
       },
       {
         "text": "mapa",
         "accent": null,
-        "start": 47.243,
-        "end": 47.752
+        "start": 46.37,
+        "end": 46.763
       },
       {
         "text": "do",
         "accent": null,
-        "start": 47.752,
-        "end": 48.092
+        "start": 46.725,
+        "end": 46.873
       },
       {
         "text": "seu",
         "accent": null,
-        "start": 48.092,
-        "end": 48.516
+        "start": 46.836,
+        "end": 47.094
       },
       {
         "text": "bolso...",
         "accent": null,
-        "start": 48.516,
-        "end": 49.62
+        "start": 47.056,
+        "end": 47.547
       }
     ]
   },
@@ -717,43 +717,43 @@
         "text": "...funciona",
         "accent": null,
         "start": 50.12,
-        "end": 51.049
+        "end": 50.76
       },
       {
         "text": "conversando",
         "accent": null,
-        "start": 51.049,
-        "end": 51.977
+        "start": 50.721,
+        "end": 51.326
       },
       {
         "text": "direto",
         "accent": null,
-        "start": 51.977,
-        "end": 52.549
+        "start": 51.287,
+        "end": 51.762
       },
       {
         "text": "com",
         "accent": null,
-        "start": 52.549,
-        "end": 52.906
+        "start": 51.724,
+        "end": 51.915
       },
       {
         "text": "o",
         "accent": null,
-        "start": 52.906,
-        "end": 53.12
+        "start": 51.877,
+        "end": 51.974
       },
       {
         "text": "espaço",
         "accent": "cyan",
-        "start": 53.12,
-        "end": 53.691
+        "start": 51.936,
+        "end": 52.446
       },
       {
         "text": "sideral!",
         "accent": "cyan",
-        "start": 53.691,
-        "end": 54.62
+        "start": 52.408,
+        "end": 52.988
       }
     ]
   },
@@ -769,43 +769,43 @@
         "text": "Curtiu?",
         "accent": null,
         "start": 55.12,
-        "end": 55.951
+        "end": 55.654
       },
       {
         "text": "Segue",
         "accent": "cyan",
-        "start": 55.951,
-        "end": 56.435
+        "start": 55.943,
+        "end": 56.403
       },
       {
         "text": "para",
         "accent": null,
-        "start": 56.435,
-        "end": 56.851
+        "start": 56.364,
+        "end": 56.607
       },
       {
         "text": "mais",
         "accent": null,
-        "start": 56.851,
-        "end": 57.266
+        "start": 56.568,
+        "end": 56.857
       },
       {
         "text": "curiosidades",
         "accent": null,
-        "start": 57.266,
-        "end": 58.235
+        "start": 56.818,
+        "end": 57.539
       },
       {
         "text": "de",
         "accent": null,
-        "start": 58.235,
-        "end": 58.512
+        "start": 57.5,
+        "end": 57.675
       },
       {
         "text": "tecnologia!",
         "accent": null,
-        "start": 58.512,
-        "end": 59.62
+        "start": 57.637,
+        "end": 58.505
       }
     ]
   }

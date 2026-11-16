@@ -3,28 +3,40 @@
 Vídeo explicativo para TikTok / YouTube Shorts: **1080×1920 (9:16), 30 fps, 60 s exatos, 12 cenas de 5 s
 (150 quadros cada)**. Tudo é gerado por código: Three.js (WebGL) → quadros via Playwright/Chromium → MP4 via ffmpeg.
 
-- **Sem TTS.** Nenhuma chamada de rede em tempo de render. O MP4 sai com uma faixa de áudio **silenciosa** (AAC estéreo),
-  pronta para receber uma locução depois.
-- **Legendas embutidas** no vídeo (Montserrat 800, palavra por palavra com micro-zoom, abaixo do centro da tela).
-  Como não há áudio real, os tempos por palavra são **estimados** a partir do ritmo natural de fala em PT-BR
-  (peso por nº de caracteres + pausas de pontuação, janela de voz 0,12 s → 4,62 s de cada cena).
+- **Voz dinâmica (neural, pt-BR).** Locução masculina jovem (`pt-BR-AntonioNeural`, Edge TTS) com "direção de
+  interpretação" por frase: ritmo ágil, tom curioso no setup, pausa dramática antes de *"mas é o exato oposto!"*,
+  voz baixa e íntima em *"ele apenas escuta"*, crescendo até o clímax e tom animado na CTA. Cada cena é ajustada para
+  caber nos seus 5 s e a faixa é masterizada (EQ + compressão, ≈ −14 LUFS, pico −4 dBFS).
+- **Legendas sincronizadas com a voz real**, palavra por palavra (Montserrat 800, micro-zoom), abaixo do centro da
+  tela. Os tempos vêm do alinhamento das palavras da legenda com as palavras faladas (`src/caption_timing.json`).
+  Os eventos visuais das cenas 11 e 12 também seguem a fala (o pin trava em *"espaço"*, o botão é tocado em *"Segue"*).
 - Cada quadro é uma função pura do seu número → render paralelo, retomável e determinístico.
 
 ## Resultado
 
-`out/como_o_gps_funciona.mp4` (≈48 MB; H.264 High, yuv420p, BT.709, ~6,5 Mbps, `+faststart`, áudio AAC silencioso) · `out/captions.srt` · `out/captions_words.srt` · `out/captions.json`
+`out/como_o_gps_funciona.mp4` (≈48 MB; H.264 High, yuv420p, BT.709, ~6,5 Mbps, `+faststart`, áudio AAC com a locução) ·
+`out/voiceover.mp3` (só a voz) · `out/voice_words.json` (tempo real de cada palavra falada) ·
+`out/captions.srt` · `out/captions_words.srt` · `out/captions.json`
 
 ## Como gerar
 
 ```bash
 cd gps_trilateration
 npm install                      # three, world-atlas (continentes reais), fonte Montserrat
-# playwright + chromium também são necessários (npm i -D playwright && npx playwright install chromium)
+# playwright + chromium (npm i -D playwright && npx playwright install chromium) e ffmpeg
+pip install edge-tts numpy       # só para a voz; precisa de acesso a speech.platform.bing.com
 
-node tools/render.mjs --frames 0-1799 --workers 3 --out frames     # ~1 h em CPU (SwiftShader), retomável
-node tools/export_captions.mjs                                      # SRT/JSON com os tempos
-bash tools/encode.sh                                                # MP4 final (60 s, áudio silencioso, ~6,5 Mbps)
+python3 tools/make_voiceover.py                 # voz por cena -> out/voiceover.wav/.mp3 + out/voice_words.json (~1 min)
+node tools/align_captions.mjs                   # sincroniza as legendas com a voz -> src/caption_timing.json
+node tools/render.mjs --frames 0-1799 --workers 3 --captions none --out frames_base   # quadros 3D, ~45 min em CPU, retomável
+node tools/render_captions.mjs --out captions_frames --workers 3                      # camada transparente de legendas (~1 min)
+node tools/export_captions.mjs                  # SRT/JSON
+bash tools/encode.sh                            # MP4 final: 3D + legendas + voz
 ```
+
+Como as legendas são uma camada separada, **mudar a voz, o texto ou os tempos não exige rerrenderizar o 3D**: rode
+`make_voiceover.py`, `align_captions.mjs`, `render_captions.mjs` e `encode.sh` (poucos minutos).
+Sem acesso à rede para o TTS, apague `out/voiceover.wav` e o `encode.sh` gera o vídeo com áudio silencioso.
 
 Pré-visualização rápida de quadros soltos (metade da resolução):
 
@@ -44,9 +56,13 @@ Também dá para abrir `index.html?f=NNN` num servidor estático para ver o quad
 | `src/shaders.js` | GLSL: Terra, esferas de sinal (wireframe poligonal + zona de interseção), feixes, partículas, DOF, glitch/pós |
 | `src/assets.js` | Texturas procedurais, mapa da tela do celular, rótulos HUD |
 | `src/main.js` | Renderer, pós-processamento (DOF → bloom → glitch/aberração/vinheta/grão → tonemap), legendas DOM |
-| `tools/render.mjs` | Servidor estático + N Chromiums headless → JPEGs |
+| `src/captions_dom.js`, `captions.html` | Legendas em DOM: embutidas na prévia (`index.html`) e como camada transparente (`captions.html`) |
+| `tools/make_voiceover.py` | Voz neural por frase (ritmo/tom/volume), ajuste por cena, masterização, tempos reais das palavras |
+| `tools/align_captions.mjs` | Alinha as palavras da legenda às palavras faladas |
+| `tools/render.mjs` | Servidor estático + N Chromiums headless → JPEGs (`--captions none` para quadros 3D puros) |
+| `tools/render_captions.mjs` | Camada de legendas em PNG transparente (sem WebGL, rápida) |
 | `tools/export_captions.mjs` | Exporta tempos das legendas (SRT por cena, SRT por palavra, JSON) |
-| `tools/encode.sh` | ffmpeg: quadros → MP4 + trilha de áudio silenciosa |
+| `tools/encode.sh` | ffmpeg: quadros 3D + legendas + voz → MP4 |
 
 ## Linha do tempo
 
@@ -83,11 +99,9 @@ São Paulo (−23,55 / −46,63).
 - Na cena 6 a esfera de um satélite não "engloba" a Terra inteira (fisicamente ela só corta uma calota), então a
   Terra aparece parcialmente dentro dela, com o celular na superfície da esfera.
 
-## Colocar uma locução depois
+## Trocar / ajustar a voz
 
-```bash
-ffmpeg -i out/como_o_gps_funciona.mp4 -i locucao.wav -map 0:v -map 1:a -c:v copy -c:a aac -shortest com_voz.mp4
-```
-
-Se os tempos da sua voz forem diferentes, ajuste `VO_START`/`VO_END` (ou os pesos) em `src/captions.js` e rode o render
-de novo só das cenas afetadas (os quadros existentes são pulados; apague os JPEGs que quiser refazer).
+A "direção" de cada frase (velocidade, tom em Hz, volume e pausas) está na lista `PLAN` de `tools/make_voiceover.py`.
+O Edge TTS tem uma única voz masculina pt-BR (`pt-BR-AntonioNeural`); a variação de tom/ritmo é o que a deixa dinâmica.
+Para usar uma locução gravada por uma pessoa, coloque a faixa em `out/voiceover.wav` (60 s, estéreo) e edite
+`out/voice_words.json` com os tempos das palavras antes de rodar `align_captions.mjs`.
