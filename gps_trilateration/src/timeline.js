@@ -393,19 +393,19 @@ SCENES[10] = (c) => {
   floatPhone(c, { rotMul: 0.6, bob: 0.008 });
   const u = smoother(t / 5);
   cam(c, V3(U.x + lerp(-0.1, 0.03, u), U.y + lerp(0.1, 0.05, u), U.z + lerp(3.3, 2.5, u)), V3(U.x, U.y + 0.02, U.z), 36, 0.01 * Math.sin(T * 0.6));
-  const dot = easeOutBack(range(t, 0.7, 1.3), 2), lock = smooth(range(t, 1.3, 1.65));
-  const rip = range(t, 1.6, 3.0), sheet = range(t, 2.5, 3.4);
-  paintScreen(c, { dot, lock, ripple: t >= 1.6 ? rip : -1, sheet, pan: 0 });
+  const dot = easeOutBack(range(t, 0.55, 1.15), 2), lock = smooth(range(t, 1.9, 2.25));
+  const rip = range(t, 1.95, 3.35), sheet = range(t, 3.0, 3.8);
+  paintScreen(c, { dot, lock, ripple: t >= 1.95 ? rip : -1, sheet, pan: 0 });
   W.dust.visible = true; W.bokeh.visible = true;
   // 3D cyan ripples radiating from the pin
   W.screenRipples.forEach((r, i) => {
-    const p = range(t, 1.62 + i * 0.22, 2.9 + i * 0.22);
+    const p = range(t, 1.97 + i * 0.22, 3.25 + i * 0.22);
     r.visible = p > 0 && p < 1; r.position.set(0, -0.04, 0.062 + 0.03 * p); r.scale.setScalar(0.06 + p * 0.95); r.material.opacity = 1 - p; r.material.color.set(0x00f0ff).multiplyScalar(2.6 * (1 - p));
   });
-  const pulse = Math.max(0, 1 - Math.abs(t - 1.65) * 2.2);
+  const pulse = Math.max(0, 1 - Math.abs(t - 2.0) * 2.2);
   W.aura.intensity = 9 * pulse + 1.5 * sheet; W.aura.position.set(U.x, U.y - 0.05, U.z + 0.9);
   W.phoneGlow.material.opacity = 0.18 * lock + 0.5 * pulse; W.phoneGlow.scale.setScalar(3.4 + 0.6 * pulse);
-  if (t > 1.58 && t < 1.8) FX.punch = 0.8 * (1 - (t - 1.58) / 0.22);
+  if (t > 1.93 && t < 2.15) FX.punch = 0.8 * (1 - (t - 1.93) / 0.22);
   FX.dofAperture = 0; FX.bloom = 0.6;
 };
 
@@ -423,21 +423,21 @@ SCENES[11] = (c) => {
   W.aura.intensity = 2; W.aura.position.set(U.x, U.y, U.z + 1.0);
   // orbiting UI: frosted-glass follow button and a neon heart
   W.cta.visible = true;
-  const kb = easeOutBack(range(t, 0.25, 0.85)), kh = easeOutBack(range(t, 0.7, 1.3));
-  const press = range(t, 3.35, 3.6), pressK = t >= 3.35 && t < 3.7 ? 1 - 0.1 * Math.sin(Math.PI * range(t, 3.35, 3.7)) : 1;
-  const done = t >= 3.5;
+  const kb = easeOutBack(range(t, 0.3, 0.85)), kh = easeOutBack(range(t, 0.05, 0.55));
+  const press = range(t, 1.12, 1.4), pressK = t >= 1.12 && t < 1.5 ? 1 - 0.1 * Math.sin(Math.PI * range(t, 1.12, 1.5)) : 1;
+  const done = t >= 1.3;
   W.drawBtn(done, 0);
   const ob = T * 0.85 + 2.3, oh = T * 0.85 + 2.3 + Math.PI;
   const rad = 0.8;
   W.btn.position.set(U.x + Math.sin(ob) * rad * 0.9, U.y - 0.92 + 0.05 * Math.sin(T * 1.7), U.z + Math.cos(ob) * rad * 1.25 + 0.2);
   W.btn.lookAt(c.CAM.pos); W.btn.rotateY(0.18 * Math.sin(T)); W.btn.scale.setScalar(0.56 * Math.max(kb, 0.001) * pressK * (done ? 1.04 : 1));
-  const beat = t >= 3.8 ? 1 + 0.2 * Math.max(0, Math.sin((t - 3.8) * 9)) * Math.exp(-(t - 3.8) * 0.9) : 1;
+  const beat = t >= 0.62 ? 1 + 0.2 * Math.max(0, Math.sin((t - 0.62) * 9)) * Math.exp(-(t - 0.62) * 0.9) : 1;
   W.heart.position.set(U.x + Math.sin(oh) * rad * 0.9, U.y + 0.62 + 0.06 * Math.sin(T * 1.4), U.z + Math.cos(oh) * rad * 1.25 + 0.2);
-  W.heart.lookAt(c.CAM.pos); W.heart.rotateY(0.3 * Math.sin(T * 1.3)); W.heart.scale.setScalar(0.34 * Math.max(kh, 0.001) * beat * (t >= 3.8 && t < 4.0 ? 1 + 0.5 * Math.sin(Math.PI * range(t, 3.8, 4.0)) : 1));
-  W.heartMat.emissiveIntensity = 1.7 + (t >= 3.8 ? 1.2 * Math.exp(-(t - 3.8)) : 0);
+  W.heart.lookAt(c.CAM.pos); W.heart.rotateY(0.3 * Math.sin(T * 1.3)); W.heart.scale.setScalar(0.34 * Math.max(kh, 0.001) * beat * (t >= 0.62 && t < 0.82 ? 1 + 0.5 * Math.sin(Math.PI * range(t, 0.62, 0.82)) : 1));
+  W.heartMat.emissiveIntensity = 1.7 + (t >= 0.62 ? 1.2 * Math.exp(-(t - 0.62)) : 0);
   W.heartGlow.position.copy(W.heart.position); W.heartGlow.material.opacity = 0.55 * kh;
   W.heartGlow.scale.setScalar(1.6 + 0.4 * Math.sin(T * 5));
-  if (t >= 3.8) { W.burst.visible = true; W.burst.position.copy(W.heart.position); W.burst.material.uniforms.uTime.value = (t - 3.8) * 0.28; W.burst.material.uniforms.uSize.value = 0.012; W.burst.material.uniforms.uAlpha.value = 1.4 * Math.exp(-(t - 3.8) * 0.9); W.burst.material.uniforms.uColor.value.set(0xff6a8a); }
+  if (t >= 0.62) { W.burst.visible = true; W.burst.position.copy(W.heart.position); W.burst.material.uniforms.uTime.value = (t - 0.62) * 0.28; W.burst.material.uniforms.uSize.value = 0.012; W.burst.material.uniforms.uAlpha.value = 1.4 * Math.exp(-(t - 0.62) * 0.9); W.burst.material.uniforms.uColor.value.set(0xff6a8a); }
   FX.dofFocus = 5.1; FX.dofAperture = 8; FX.bloom = 0.6;
 };
 

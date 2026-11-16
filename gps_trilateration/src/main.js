@@ -8,7 +8,8 @@ import { Pass, FullScreenQuad } from 'three/addons/postprocessing/Pass.js';
 import { createWorld } from './world.js';
 import * as A from './assets.js';
 import * as S from './shaders.js';
-import { wordsOfScene, SCENE_FRAMES, FPS, TOTAL_FRAMES } from './captions.js';
+import { SCENE_FRAMES, FPS, TOTAL_FRAMES } from './captions.js';
+import { makeCaptions, loadTiming } from './captions_dom.js';
 import { runScene } from './timeline.js';
 import { clamp, smooth, shake } from './util.js';
 
@@ -61,26 +62,11 @@ const finalPass = new ShaderPass({
 composer.addPass(finalPass);
 composer.addPass(new OutputPass());
 
-// ---------------------------------------------------------------- captions (DOM overlay)
+// ---------------------------------------------------------------- captions (DOM overlay; ?captions=none renders the bare 3D frames)
 const capEl = document.getElementById('captions');
-let capScene = -1, capWords = [], capSpans = [];
-function buildCaption(sc) {
-  capEl.innerHTML = ''; capWords = wordsOfScene(sc); capSpans = [];
-  capWords.forEach((w) => { const s = document.createElement('span'); s.className = 'w ' + w.cls; s.textContent = w.text; capEl.appendChild(s); capEl.appendChild(document.createTextNode(' ')); capSpans.push(s); });
-  capScene = sc;
-}
-function updateCaption(sc, t) {
-  if (sc !== capScene) buildCaption(sc);
-  capWords.forEach((w, i) => {
-    const s = capSpans[i], a = t - w.start;
-    if (a < 0) { s.style.opacity = '0'; return; }
-    const pop = clamp(a / 0.2);
-    const sc2 = 1 + 0.11 * (1 - smooth(pop)) + (t < w.end ? 0.04 : 0);
-    s.style.opacity = String(clamp(a / 0.08));
-    s.style.transform = `scale(${sc2.toFixed(3)}) translateY(${((1 - smooth(pop)) * 8).toFixed(1)}px)`;
-    s.style.color = w.cls ? '' : (t < w.end ? '#fff7b0' : '#ffffff');
-  });
-}
+const CAPTIONS = params.get('captions') || 'burn';
+if (CAPTIONS === 'none') capEl.style.display = 'none';
+const updateCaption = makeCaptions(capEl);
 
 // ---------------------------------------------------------------- frame renderer
 let W = null;
@@ -128,6 +114,7 @@ function renderFrame(f) {
 
 async function init() {
   await Promise.all([document.fonts.load('700 40px Montserrat'), document.fonts.load('800 40px Montserrat'), document.fonts.load('900 40px Montserrat')]);
+  await loadTiming();
   const land = await A.makeLandTexture('./node_modules/world-atlas/land-110m.json');
   W = await createWorld(renderer, scene, land);
   W.reset();

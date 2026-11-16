@@ -1,7 +1,7 @@
 // Caption + voice-over script for the 12 scenes (5 s each = 150 frames @ 30 fps).
 //
-// There is NO text-to-speech in this build, so the per-word timings below are
-// *estimated* from a natural PT-BR speaking pace (word weight ~ characters).
+// Per-word timings come from src/caption_timing.json (real voice-over, tools/align_captions.mjs) when it exists;
+// otherwise they are *estimated* from a natural PT-BR speaking pace (word weight ~ characters).
 // Markup inside `text`:  *word*  -> red accent,   _word_ -> cyan accent.
 //
 // This module is isomorphic (no DOM access) so tools/export_captions.mjs can
@@ -44,8 +44,12 @@ export const SCENES = [
     text: 'Curtiu? _Segue_ para mais curiosidades de tecnologia!' },
 ];
 
-/** Split the markup into words: [{text, cls, start, end}] (seconds, local to the scene). */
-export function wordsOfScene(index) {
+let TIMING = null;
+/** Inject real per-word timings (from tools/align_captions.mjs): array(12) of [{start,end}] in scene-local seconds. */
+export function setTiming(t) { TIMING = t; }
+
+/** Split the markup into words (no timings): [{text, cls}] */
+export function parseScene(index) {
   const raw = SCENES[index].text.split(/\s+/).filter(Boolean);
   const parsed = [];
   let accent = null;            // an accent run may span several words: "_hora exata_"
@@ -59,6 +63,14 @@ export function wordsOfScene(index) {
     parsed.push({ text: tok, cls: cls || '' });
     if (closes) accent = null;
   }
+  return parsed;
+}
+
+/** Caption words with timings: [{text, cls, start, end}] (seconds, local to the scene). Uses the real voice-over
+ *  timings when injected via setTiming(), otherwise an estimate from the speaking pace. */
+export function wordsOfScene(index) {
+  const parsed = parseScene(index);
+  if (TIMING && TIMING[index] && TIMING[index].length === parsed.length) return parsed.map((w, i) => ({ ...w, start: TIMING[index][i].start, end: TIMING[index][i].end }));
   // weight ~ length (+ breathing room after punctuation)
   const weights = parsed.map((w) => w.text.length + 2 + (/[.!?…]$/.test(w.text) ? 3 : /[,]$/.test(w.text) ? 1.5 : 0));
   const total = weights.reduce((a, b) => a + b, 0);

@@ -1,5 +1,8 @@
 node_modules/
 frames/
+frames_base/
+captions_frames/
 preview/
 out/*.log
+out/*.wav
 .cache/

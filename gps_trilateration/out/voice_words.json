@@ -1,0 +1,932 @@
+{
+ "voice": "pt-BR-AntonioNeural",
+ "scenes": [
+  {
+   "scene": 1,
+   "voice_start": 0.15,
+   "voice_end": 4.572,
+   "duration": 4.422,
+   "speed": 1.181,
+   "phrases": [
+    {
+     "text": "Tudo o que te ensinaram sobre como o GPS do seu celular funciona...",
+     "rate": 32,
+     "pitch": 2,
+     "volume": 0,
+     "start": 0.0,
+     "end": 2.923
+    },
+    {
+     "text": "está totalmente errado.",
+     "rate": 20,
+     "pitch": 7,
+     "volume": 14,
+     "start": 3.177,
+     "end": 4.422
+    }
+   ],
+   "words": [
+    {
+     "text": "Tudo",
+     "start": 0.17,
+     "end": 0.359
+    },
+    {
+     "text": "o",
+     "start": 0.369,
+     "end": 0.407
+    },
+    {
+     "text": "que",
+     "start": 0.416,
+     "end": 0.482
+    },
+    {
+     "text": "te",
+     "start": 0.492,
+     "end": 0.558
+    },
+    {
+     "text": "ensinaram",
+     "start": 0.568,
+     "end": 0.947
+    },
+    {
+     "text": "sobre",
+     "start": 0.956,
+     "end": 1.174
+    },
+    {
+     "text": "como",
+     "start": 1.183,
+     "end": 1.373
+    },
+    {
+     "text": "o",
+     "start": 1.382,
+     "end": 1.401
+    },
+    {
+     "text": "GPS",
+     "start": 1.411,
+     "end": 1.865
+    },
+    {
+     "text": "do",
+     "start": 1.875,
+     "end": 1.95
+    },
+    {
+     "text": "seu",
+     "start": 1.96,
+     "end": 2.092
+    },
+    {
+     "text": "celular",
+     "start": 2.102,
+     "end": 2.481
+    },
+    {
+     "text": "funciona",
+     "start": 2.49,
+     "end": 2.973
+    },
+    {
+     "text": "está",
+     "start": 3.347,
+     "end": 3.618
+    },
+    {
+     "text": "totalmente",
+     "start": 3.628,
+     "end": 4.118
+    },
+    {
+     "text": "errado",
+     "start": 4.128,
+     "end": 4.472
+    }
+   ]
+  },
+  {
+   "scene": 2,
+   "voice_start": 5.15,
+   "voice_end": 8.304,
+   "duration": 3.154,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "A maioria das pessoas acha que o seu celular manda o sinal...",
+     "rate": 10,
+     "pitch": 2,
+     "volume": 0,
+     "start": 0.0,
+     "end": 3.154
+    }
+   ],
+   "words": [
+    {
+     "text": "A",
+     "start": 5.17,
+     "end": 5.25
+    },
+    {
+     "text": "maioria",
+     "start": 5.261,
+     "end": 5.659
+    },
+    {
+     "text": "das",
+     "start": 5.67,
+     "end": 5.818
+    },
+    {
+     "text": "pessoas",
+     "start": 5.829,
+     "end": 6.227
+    },
+    {
+     "text": "acha",
+     "start": 6.238,
+     "end": 6.625
+    },
+    {
+     "text": "que",
+     "start": 6.636,
+     "end": 6.715
+    },
+    {
+     "text": "o",
+     "start": 6.727,
+     "end": 6.75
+    },
+    {
+     "text": "seu",
+     "start": 6.761,
+     "end": 6.92
+    },
+    {
+     "text": "celular",
+     "start": 6.931,
+     "end": 7.386
+    },
+    {
+     "text": "manda",
+     "start": 7.397,
+     "end": 7.738
+    },
+    {
+     "text": "o",
+     "start": 7.75,
+     "end": 7.784
+    },
+    {
+     "text": "sinal",
+     "start": 7.795,
+     "end": 8.204
+    }
+   ]
+  },
+  {
+   "scene": 3,
+   "voice_start": 10.15,
+   "voice_end": 13.991,
+   "duration": 3.841,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "para o espaço e o satélite te acha...",
+     "rate": 12,
+     "pitch": 3,
+     "volume": 0,
+     "start": 0.0,
+     "end": 1.928
+    },
+    {
+     "text": "mas é o exato oposto!",
+     "rate": 0,
+     "pitch": 9,
+     "volume": 16,
+     "start": 2.208,
+     "end": 3.841
+    }
+   ],
+   "words": [
+    {
+     "text": "para",
+     "start": 10.17,
+     "end": 10.337
+    },
+    {
+     "text": "o",
+     "start": 10.349,
+     "end": 10.371
+    },
+    {
+     "text": "espaço",
+     "start": 10.382,
+     "end": 10.884
+    },
+    {
+     "text": "e",
+     "start": 10.895,
+     "end": 10.918
+    },
+    {
+     "text": "o",
+     "start": 10.929,
+     "end": 10.962
+    },
+    {
+     "text": "satélite",
+     "start": 10.974,
+     "end": 11.476
+    },
+    {
+     "text": "te",
+     "start": 11.487,
+     "end": 11.61
+    },
+    {
+     "text": "acha",
+     "start": 11.621,
+     "end": 11.978
+    },
+    {
+     "text": "mas",
+     "start": 12.378,
+     "end": 12.591
+    },
+    {
+     "text": "é",
+     "start": 12.603,
+     "end": 12.816
+    },
+    {
+     "text": "o",
+     "start": 12.828,
+     "end": 12.89
+    },
+    {
+     "text": "exato",
+     "start": 12.903,
+     "end": 13.316
+    },
+    {
+     "text": "oposto",
+     "start": 13.328,
+     "end": 13.891
+    }
+   ]
+  },
+  {
+   "scene": 4,
+   "voice_start": 15.15,
+   "voice_end": 19.13,
+   "duration": 3.98,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "O seu celular não manda nada para cima.",
+     "rate": 8,
+     "pitch": 2,
+     "volume": 4,
+     "start": 0.0,
+     "end": 2.296
+    },
+    {
+     "text": "Ele apenas escuta.",
+     "rate": -10,
+     "pitch": -5,
+     "volume": 0,
+     "start": 2.596,
+     "end": 3.98
+    }
+   ],
+   "words": [
+    {
+     "text": "O",
+     "start": 15.17,
+     "end": 15.274
+    },
+    {
+     "text": "seu",
+     "start": 15.286,
+     "end": 15.459
+    },
+    {
+     "text": "celular",
+     "start": 15.471,
+     "end": 15.945
+    },
+    {
+     "text": "não",
+     "start": 15.957,
+     "end": 16.131
+    },
+    {
+     "text": "manda",
+     "start": 16.142,
+     "end": 16.432
+    },
+    {
+     "text": "nada",
+     "start": 16.443,
+     "end": 16.767
+    },
+    {
+     "text": "para",
+     "start": 16.779,
+     "end": 16.952
+    },
+    {
+     "text": "cima",
+     "start": 16.964,
+     "end": 17.346
+    },
+    {
+     "text": "Ele",
+     "start": 17.766,
+     "end": 17.946
+    },
+    {
+     "text": "apenas",
+     "start": 17.96,
+     "end": 18.363
+    },
+    {
+     "text": "escuta",
+     "start": 18.377,
+     "end": 19.03
+    }
+   ]
+  },
+  {
+   "scene": 5,
+   "voice_start": 20.15,
+   "voice_end": 23.011,
+   "duration": 2.861,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "Satélites no espaço enviam a hora exata do sinal...",
+     "rate": 9,
+     "pitch": 3,
+     "volume": 2,
+     "start": 0.0,
+     "end": 2.861
+    }
+   ],
+   "words": [
+    {
+     "text": "Satélites",
+     "start": 20.17,
+     "end": 20.812
+    },
+    {
+     "text": "no",
+     "start": 20.824,
+     "end": 20.892
+    },
+    {
+     "text": "espaço",
+     "start": 20.904,
+     "end": 21.305
+    },
+    {
+     "text": "enviam",
+     "start": 21.317,
+     "end": 21.718
+    },
+    {
+     "text": "a",
+     "start": 21.73,
+     "end": 21.775
+    },
+    {
+     "text": "hora",
+     "start": 21.787,
+     "end": 22.028
+    },
+    {
+     "text": "exata",
+     "start": 22.039,
+     "end": 22.406
+    },
+    {
+     "text": "do",
+     "start": 22.418,
+     "end": 22.498
+    },
+    {
+     "text": "sinal",
+     "start": 22.509,
+     "end": 22.911
+    }
+   ]
+  },
+  {
+   "scene": 6,
+   "voice_start": 25.15,
+   "voice_end": 29.296,
+   "duration": 4.146,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "e o celular calcula o tempo de chegada,",
+     "rate": 10,
+     "pitch": 1,
+     "volume": 0,
+     "start": 0.0,
+     "end": 2.2
+    },
+    {
+     "text": "desenhando uma esfera gigante.",
+     "rate": 2,
+     "pitch": 6,
+     "volume": 10,
+     "start": 2.36,
+     "end": 4.146
+    }
+   ],
+   "words": [
+    {
+     "text": "e",
+     "start": 25.17,
+     "end": 25.284
+    },
+    {
+     "text": "o",
+     "start": 25.295,
+     "end": 25.34
+    },
+    {
+     "text": "celular",
+     "start": 25.352,
+     "end": 25.829
+    },
+    {
+     "text": "calcula",
+     "start": 25.84,
+     "end": 26.261
+    },
+    {
+     "text": "o",
+     "start": 26.272,
+     "end": 26.329
+    },
+    {
+     "text": "tempo",
+     "start": 26.34,
+     "end": 26.659
+    },
+    {
+     "text": "de",
+     "start": 26.67,
+     "end": 26.727
+    },
+    {
+     "text": "chegada",
+     "start": 26.738,
+     "end": 27.25
+    },
+    {
+     "text": "desenhando",
+     "start": 27.53,
+     "end": 28.167
+    },
+    {
+     "text": "uma",
+     "start": 28.179,
+     "end": 28.265
+    },
+    {
+     "text": "esfera",
+     "start": 28.277,
+     "end": 28.62
+    },
+    {
+     "text": "gigante",
+     "start": 28.633,
+     "end": 29.196
+    }
+   ]
+  },
+  {
+   "scene": 7,
+   "voice_start": 30.15,
+   "voice_end": 34.69,
+   "duration": 4.54,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "Com um satélite, você está em qualquer lugar.",
+     "rate": 10,
+     "pitch": 2,
+     "volume": 0,
+     "start": 0.0,
+     "end": 2.381
+    },
+    {
+     "text": "Com três, a área diminui...",
+     "rate": 4,
+     "pitch": 5,
+     "volume": 6,
+     "start": 2.581,
+     "end": 4.54
+    }
+   ],
+   "words": [
+    {
+     "text": "Com",
+     "start": 30.17,
+     "end": 30.318
+    },
+    {
+     "text": "um",
+     "start": 30.329,
+     "end": 30.386
+    },
+    {
+     "text": "satélite",
+     "start": 30.397,
+     "end": 30.931
+    },
+    {
+     "text": "você",
+     "start": 31.181,
+     "end": 31.42
+    },
+    {
+     "text": "está",
+     "start": 31.431,
+     "end": 31.659
+    },
+    {
+     "text": "em",
+     "start": 31.67,
+     "end": 31.738
+    },
+    {
+     "text": "qualquer",
+     "start": 31.75,
+     "end": 32.079
+    },
+    {
+     "text": "lugar",
+     "start": 32.09,
+     "end": 32.431
+    },
+    {
+     "text": "Com",
+     "start": 32.751,
+     "end": 33.004
+    },
+    {
+     "text": "três",
+     "start": 33.016,
+     "end": 33.424
+    },
+    {
+     "text": "a",
+     "start": 33.677,
+     "end": 33.761
+    },
+    {
+     "text": "área",
+     "start": 33.773,
+     "end": 34.049
+    },
+    {
+     "text": "diminui",
+     "start": 34.061,
+     "end": 34.59
+    }
+   ]
+  },
+  {
+   "scene": 8,
+   "voice_start": 35.15,
+   "voice_end": 38.128,
+   "duration": 2.978,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "mas é o quarto satélite",
+     "rate": -2,
+     "pitch": 4,
+     "volume": 6,
+     "start": 0.0,
+     "end": 1.727
+    },
+    {
+     "text": "que muda tudo.",
+     "rate": -6,
+     "pitch": 9,
+     "volume": 16,
+     "start": 1.847,
+     "end": 2.978
+    }
+   ],
+   "words": [
+    {
+     "text": "mas",
+     "start": 35.17,
+     "end": 35.387
+    },
+    {
+     "text": "é",
+     "start": 35.4,
+     "end": 35.578
+    },
+    {
+     "text": "o",
+     "start": 35.591,
+     "end": 35.655
+    },
+    {
+     "text": "quarto",
+     "start": 35.667,
+     "end": 36.088
+    },
+    {
+     "text": "satélite",
+     "start": 36.101,
+     "end": 36.777
+    },
+    {
+     "text": "que",
+     "start": 37.017,
+     "end": 37.177
+    },
+    {
+     "text": "muda",
+     "start": 37.19,
+     "end": 37.602
+    },
+    {
+     "text": "tudo",
+     "start": 37.615,
+     "end": 38.028
+    }
+   ]
+  },
+  {
+   "scene": 9,
+   "voice_start": 40.15,
+   "voice_end": 44.592,
+   "duration": 4.442,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "Ele cruza todas as esferas",
+     "rate": 10,
+     "pitch": 3,
+     "volume": 4,
+     "start": 0.0,
+     "end": 1.802
+    },
+    {
+     "text": "e crava milimetricamente a sua altitude.",
+     "rate": 4,
+     "pitch": 10,
+     "volume": 16,
+     "start": 1.942,
+     "end": 4.442
+    }
+   ],
+   "words": [
+    {
+     "text": "Ele",
+     "start": 40.17,
+     "end": 40.363
+    },
+    {
+     "text": "cruza",
+     "start": 40.375,
+     "end": 40.761
+    },
+    {
+     "text": "todas",
+     "start": 40.772,
+     "end": 41.068
+    },
+    {
+     "text": "as",
+     "start": 41.079,
+     "end": 41.193
+    },
+    {
+     "text": "esferas",
+     "start": 41.204,
+     "end": 41.852
+    },
+    {
+     "text": "e",
+     "start": 42.112,
+     "end": 42.244
+    },
+    {
+     "text": "crava",
+     "start": 42.256,
+     "end": 42.617
+    },
+    {
+     "text": "milimetricamente",
+     "start": 42.629,
+     "end": 43.53
+    },
+    {
+     "text": "a",
+     "start": 43.542,
+     "end": 43.578
+    },
+    {
+     "text": "sua",
+     "start": 43.59,
+     "end": 43.855
+    },
+    {
+     "text": "altitude",
+     "start": 43.867,
+     "end": 44.492
+    }
+   ]
+  },
+  {
+   "scene": 10,
+   "voice_start": 45.15,
+   "voice_end": 47.647,
+   "duration": 2.497,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "Bizarro pensar que o mapa do seu bolso...",
+     "rate": 2,
+     "pitch": 1,
+     "volume": 0,
+     "start": 0.0,
+     "end": 2.497
+    }
+   ],
+   "words": [
+    {
+     "text": "Bizarro",
+     "start": 45.17,
+     "end": 45.746
+    },
+    {
+     "text": "pensar",
+     "start": 45.758,
+     "end": 46.236
+    },
+    {
+     "text": "que",
+     "start": 46.248,
+     "end": 46.346
+    },
+    {
+     "text": "o",
+     "start": 46.359,
+     "end": 46.408
+    },
+    {
+     "text": "mapa",
+     "start": 46.42,
+     "end": 46.763
+    },
+    {
+     "text": "do",
+     "start": 46.775,
+     "end": 46.873
+    },
+    {
+     "text": "seu",
+     "start": 46.886,
+     "end": 47.094
+    },
+    {
+     "text": "bolso",
+     "start": 47.106,
+     "end": 47.547
+    }
+   ]
+  },
+  {
+   "scene": 11,
+   "voice_start": 50.15,
+   "voice_end": 53.088,
+   "duration": 2.938,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "funciona conversando direto com o espaço sideral!",
+     "rate": 6,
+     "pitch": 9,
+     "volume": 16,
+     "start": 0.0,
+     "end": 2.938
+    }
+   ],
+   "words": [
+    {
+     "text": "funciona",
+     "start": 50.17,
+     "end": 50.76
+    },
+    {
+     "text": "conversando",
+     "start": 50.771,
+     "end": 51.326
+    },
+    {
+     "text": "direto",
+     "start": 51.337,
+     "end": 51.762
+    },
+    {
+     "text": "com",
+     "start": 51.774,
+     "end": 51.915
+    },
+    {
+     "text": "o",
+     "start": 51.927,
+     "end": 51.974
+    },
+    {
+     "text": "espaço",
+     "start": 51.986,
+     "end": 52.446
+    },
+    {
+     "text": "sideral",
+     "start": 52.458,
+     "end": 52.988
+    }
+   ]
+  },
+  {
+   "scene": 12,
+   "voice_start": 55.15,
+   "voice_end": 58.605,
+   "duration": 3.455,
+   "speed": 1.0,
+   "phrases": [
+    {
+     "text": "Curtiu?",
+     "rate": 6,
+     "pitch": 11,
+     "volume": 10,
+     "start": 0.0,
+     "end": 0.604
+    },
+    {
+     "text": "Segue para mais curiosidades de tecnologia!",
+     "rate": 10,
+     "pitch": 7,
+     "volume": 10,
+     "start": 0.824,
+     "end": 3.455
+    }
+   ],
+   "words": [
+    {
+     "text": "Curtiu",
+     "start": 55.17,
+     "end": 55.654
+    },
+    {
+     "text": "Segue",
+     "start": 55.993,
+     "end": 56.403
+    },
+    {
+     "text": "para",
+     "start": 56.414,
+     "end": 56.607
+    },
+    {
+     "text": "mais",
+     "start": 56.618,
+     "end": 56.857
+    },
+    {
+     "text": "curiosidades",
+     "start": 56.868,
+     "end": 57.539
+    },
+    {
+     "text": "de",
+     "start": 57.55,
+     "end": 57.675
+    },
+    {
+     "text": "tecnologia",
+     "start": 57.687,
+     "end": 58.505
+    }
+   ]
+  }
+ ]
+}

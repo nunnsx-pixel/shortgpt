@@ -19,6 +19,7 @@ const WORKERS = parseInt(args.workers || '3', 10);
 const SCALE = parseFloat(args.scale || '1');
 const QUALITY = parseInt(args.quality || '95', 10);
 const FORMAT = args.format || 'jpeg';
+const CAPTIONS = args.captions || 'burn';      // burn = captions in the frame (preview); none = bare 3D frames (use render_captions.mjs overlay)
 const frames = [];
 for (const part of (args.frames || '0-1799').split(',')) {
   const [a, b] = part.split('-').map(Number); for (let i = a; i <= (b ?? a); i++) frames.push(i);
@@ -32,7 +33,7 @@ const server = http.createServer((req, res) => {
   res.writeHead(200, { 'content-type': MIME[path.extname(p)] || 'application/octet-stream' }); fs.createReadStream(p).pipe(res);
 });
 await new Promise((r) => server.listen(0, '127.0.0.1', r));
-const base = `http://127.0.0.1:${server.address().port}/index.html?scale=${SCALE}`;
+const base = `http://127.0.0.1:${server.address().port}/index.html?scale=${SCALE}&captions=${CAPTIONS}`;
 
 const name = (f) => path.join(OUT, `frame_${String(f).padStart(5, '0')}.${FORMAT === 'png' ? 'png' : 'jpg'}`);
 const todo = frames.filter((f) => !(fs.existsSync(name(f)) && fs.statSync(name(f)).size > 2000));
