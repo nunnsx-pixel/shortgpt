@@ -1,0 +1,812 @@
+[
+  {
+    "scene": 1,
+    "title": "O Gancho",
+    "start": 0,
+    "end": 5,
+    "voiceover": "Tudo o que te ensinaram sobre como o GPS do seu celular funciona... está totalmente errado.",
+    "caption": "Tudo o que te ensinaram sobre o GPS... está TOTALMENTE errado.",
+    "words": [
+      {
+        "text": "Tudo",
+        "accent": null,
+        "start": 0.12,
+        "end": 0.458
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 0.458,
+        "end": 0.626
+      },
+      {
+        "text": "que",
+        "accent": null,
+        "start": 0.626,
+        "end": 0.907
+      },
+      {
+        "text": "te",
+        "accent": null,
+        "start": 0.907,
+        "end": 1.133
+      },
+      {
+        "text": "ensinaram",
+        "accent": null,
+        "start": 1.133,
+        "end": 1.751
+      },
+      {
+        "text": "sobre",
+        "accent": null,
+        "start": 1.751,
+        "end": 2.145
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 2.145,
+        "end": 2.314
+      },
+      {
+        "text": "GPS...",
+        "accent": null,
+        "start": 2.314,
+        "end": 2.933
+      },
+      {
+        "text": "está",
+        "accent": null,
+        "start": 2.933,
+        "end": 3.27
+      },
+      {
+        "text": "TOTALMENTE",
+        "accent": "red",
+        "start": 3.27,
+        "end": 3.945
+      },
+      {
+        "text": "errado.",
+        "accent": null,
+        "start": 3.945,
+        "end": 4.62
+      }
+    ]
+  },
+  {
+    "scene": 2,
+    "title": "O Mito do Envio",
+    "start": 5,
+    "end": 10,
+    "voiceover": "A maioria das pessoas acha que o seu celular manda o sinal...",
+    "caption": "A maioria acha que o celular manda o sinal...",
+    "words": [
+      {
+        "text": "A",
+        "accent": null,
+        "start": 5.12,
+        "end": 5.353
+      },
+      {
+        "text": "maioria",
+        "accent": null,
+        "start": 5.353,
+        "end": 6.051
+      },
+      {
+        "text": "acha",
+        "accent": null,
+        "start": 6.051,
+        "end": 6.517
+      },
+      {
+        "text": "que",
+        "accent": null,
+        "start": 6.517,
+        "end": 6.904
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 6.904,
+        "end": 7.137
+      },
+      {
+        "text": "celular",
+        "accent": null,
+        "start": 7.137,
+        "end": 7.836
+      },
+      {
+        "text": "manda",
+        "accent": null,
+        "start": 7.836,
+        "end": 8.379
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 8.379,
+        "end": 8.611
+      },
+      {
+        "text": "sinal...",
+        "accent": null,
+        "start": 8.611,
+        "end": 9.62
+      }
+    ]
+  },
+  {
+    "scene": 3,
+    "title": "O Erro Vermelho",
+    "start": 10,
+    "end": 15,
+    "voiceover": "...para o espaço e o satélite te acha... mas é o exato oposto.",
+    "caption": "...para o espaço e o satélite te acha... mas é o oposto!",
+    "words": [
+      {
+        "text": "...para",
+        "accent": null,
+        "start": 10.12,
+        "end": 10.66
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 10.66,
+        "end": 10.84
+      },
+      {
+        "text": "espaço",
+        "accent": null,
+        "start": 10.84,
+        "end": 11.32
+      },
+      {
+        "text": "e",
+        "accent": null,
+        "start": 11.32,
+        "end": 11.5
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 11.5,
+        "end": 11.68
+      },
+      {
+        "text": "satélite",
+        "accent": null,
+        "start": 11.68,
+        "end": 12.28
+      },
+      {
+        "text": "te",
+        "accent": null,
+        "start": 12.28,
+        "end": 12.52
+      },
+      {
+        "text": "acha...",
+        "accent": null,
+        "start": 12.52,
+        "end": 13.24
+      },
+      {
+        "text": "mas",
+        "accent": null,
+        "start": 13.24,
+        "end": 13.54
+      },
+      {
+        "text": "é",
+        "accent": null,
+        "start": 13.54,
+        "end": 13.72
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 13.72,
+        "end": 13.9
+      },
+      {
+        "text": "oposto!",
+        "accent": "red",
+        "start": 13.9,
+        "end": 14.62
+      }
+    ]
+  },
+  {
+    "scene": 4,
+    "title": "A Revelação da Escuta",
+    "start": 15,
+    "end": 20,
+    "voiceover": "O seu celular não manda nada para cima. Ele apenas escuta.",
+    "caption": "O seu celular não manda nada para cima. Ele apenas escuta.",
+    "words": [
+      {
+        "text": "O",
+        "accent": null,
+        "start": 15.12,
+        "end": 15.298
+      },
+      {
+        "text": "seu",
+        "accent": null,
+        "start": 15.298,
+        "end": 15.594
+      },
+      {
+        "text": "celular",
+        "accent": null,
+        "start": 15.594,
+        "end": 16.127
+      },
+      {
+        "text": "não",
+        "accent": null,
+        "start": 16.127,
+        "end": 16.423
+      },
+      {
+        "text": "manda",
+        "accent": null,
+        "start": 16.423,
+        "end": 16.837
+      },
+      {
+        "text": "nada",
+        "accent": null,
+        "start": 16.837,
+        "end": 17.192
+      },
+      {
+        "text": "para",
+        "accent": null,
+        "start": 17.192,
+        "end": 17.548
+      },
+      {
+        "text": "cima.",
+        "accent": null,
+        "start": 17.548,
+        "end": 18.14
+      },
+      {
+        "text": "Ele",
+        "accent": null,
+        "start": 18.14,
+        "end": 18.436
+      },
+      {
+        "text": "apenas",
+        "accent": null,
+        "start": 18.436,
+        "end": 18.909
+      },
+      {
+        "text": "escuta.",
+        "accent": "cyan",
+        "start": 18.909,
+        "end": 19.62
+      }
+    ]
+  },
+  {
+    "scene": 5,
+    "title": "O Satélite Emissor",
+    "start": 20,
+    "end": 25,
+    "voiceover": "Satélites no espaço enviam a hora exata do sinal...",
+    "caption": "Satélites no espaço enviam a hora exata do sinal...",
+    "words": [
+      {
+        "text": "Satélites",
+        "accent": null,
+        "start": 20.12,
+        "end": 20.893
+      },
+      {
+        "text": "no",
+        "accent": null,
+        "start": 20.893,
+        "end": 21.175
+      },
+      {
+        "text": "espaço",
+        "accent": null,
+        "start": 21.175,
+        "end": 21.737
+      },
+      {
+        "text": "enviam",
+        "accent": null,
+        "start": 21.737,
+        "end": 22.3
+      },
+      {
+        "text": "a",
+        "accent": null,
+        "start": 22.3,
+        "end": 22.511
+      },
+      {
+        "text": "hora",
+        "accent": "cyan",
+        "start": 22.511,
+        "end": 22.933
+      },
+      {
+        "text": "exata",
+        "accent": "cyan",
+        "start": 22.933,
+        "end": 23.425
+      },
+      {
+        "text": "do",
+        "accent": null,
+        "start": 23.425,
+        "end": 23.706
+      },
+      {
+        "text": "sinal...",
+        "accent": null,
+        "start": 23.706,
+        "end": 24.62
+      }
+    ]
+  },
+  {
+    "scene": 6,
+    "title": "A Primeira Esfera",
+    "start": 25,
+    "end": 30,
+    "voiceover": "...e o celular calcula o tempo de chegada, desenhando uma esfera gigante.",
+    "caption": "...e o celular desenha uma esfera gigante ao redor dele.",
+    "words": [
+      {
+        "text": "...e",
+        "accent": null,
+        "start": 25.12,
+        "end": 25.506
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 25.506,
+        "end": 25.699
+      },
+      {
+        "text": "celular",
+        "accent": null,
+        "start": 25.699,
+        "end": 26.277
+      },
+      {
+        "text": "desenha",
+        "accent": null,
+        "start": 26.277,
+        "end": 26.856
+      },
+      {
+        "text": "uma",
+        "accent": null,
+        "start": 26.856,
+        "end": 27.177
+      },
+      {
+        "text": "esfera",
+        "accent": "cyan",
+        "start": 27.177,
+        "end": 27.691
+      },
+      {
+        "text": "gigante",
+        "accent": "cyan",
+        "start": 27.691,
+        "end": 28.27
+      },
+      {
+        "text": "ao",
+        "accent": null,
+        "start": 28.27,
+        "end": 28.527
+      },
+      {
+        "text": "redor",
+        "accent": null,
+        "start": 28.527,
+        "end": 28.977
+      },
+      {
+        "text": "dele.",
+        "accent": null,
+        "start": 28.977,
+        "end": 29.62
+      }
+    ]
+  },
+  {
+    "scene": 7,
+    "title": "O Segundo e Terceiro Satélites",
+    "start": 30,
+    "end": 35,
+    "voiceover": "Com um satélite, você está em qualquer lugar. Com três, a área diminui...",
+    "caption": "Com um satélite você está em qualquer lugar. Com três, a área diminui!",
+    "words": [
+      {
+        "text": "Com",
+        "accent": null,
+        "start": 30.12,
+        "end": 30.366
+      },
+      {
+        "text": "um",
+        "accent": null,
+        "start": 30.366,
+        "end": 30.563
+      },
+      {
+        "text": "satélite",
+        "accent": null,
+        "start": 30.563,
+        "end": 31.054
+      },
+      {
+        "text": "você",
+        "accent": null,
+        "start": 31.054,
+        "end": 31.35
+      },
+      {
+        "text": "está",
+        "accent": null,
+        "start": 31.35,
+        "end": 31.645
+      },
+      {
+        "text": "em",
+        "accent": null,
+        "start": 31.645,
+        "end": 31.841
+      },
+      {
+        "text": "qualquer",
+        "accent": null,
+        "start": 31.841,
+        "end": 32.333
+      },
+      {
+        "text": "lugar.",
+        "accent": null,
+        "start": 32.333,
+        "end": 32.874
+      },
+      {
+        "text": "Com",
+        "accent": null,
+        "start": 32.874,
+        "end": 33.12
+      },
+      {
+        "text": "três,",
+        "accent": null,
+        "start": 33.12,
+        "end": 33.538
+      },
+      {
+        "text": "a",
+        "accent": null,
+        "start": 33.538,
+        "end": 33.686
+      },
+      {
+        "text": "área",
+        "accent": "cyan",
+        "start": 33.686,
+        "end": 33.981
+      },
+      {
+        "text": "diminui!",
+        "accent": "cyan",
+        "start": 33.981,
+        "end": 34.62
+      }
+    ]
+  },
+  {
+    "scene": 8,
+    "title": "O Quarto Satélite",
+    "start": 35,
+    "end": 40,
+    "voiceover": "...mas é o quarto satélite que muda tudo.",
+    "caption": "Mas é o quarto satélite que muda tudo...",
+    "words": [
+      {
+        "text": "Mas",
+        "accent": null,
+        "start": 35.12,
+        "end": 35.553
+      },
+      {
+        "text": "é",
+        "accent": null,
+        "start": 35.553,
+        "end": 35.812
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 35.812,
+        "end": 36.072
+      },
+      {
+        "text": "quarto",
+        "accent": "cyan",
+        "start": 36.072,
+        "end": 36.764
+      },
+      {
+        "text": "satélite",
+        "accent": "cyan",
+        "start": 36.764,
+        "end": 37.63
+      },
+      {
+        "text": "que",
+        "accent": null,
+        "start": 37.63,
+        "end": 38.062
+      },
+      {
+        "text": "muda",
+        "accent": null,
+        "start": 38.062,
+        "end": 38.582
+      },
+      {
+        "text": "tudo...",
+        "accent": null,
+        "start": 38.582,
+        "end": 39.62
+      }
+    ]
+  },
+  {
+    "scene": 9,
+    "title": "A Intersecção Perfeita",
+    "start": 40,
+    "end": 45,
+    "voiceover": "Ele cruza todas as esferas e crava milimetricamente a sua altitude.",
+    "caption": "Ele cruza todas as esferas e crava sua altitude exata.",
+    "words": [
+      {
+        "text": "Ele",
+        "accent": null,
+        "start": 40.12,
+        "end": 40.451
+      },
+      {
+        "text": "cruza",
+        "accent": null,
+        "start": 40.451,
+        "end": 40.914
+      },
+      {
+        "text": "todas",
+        "accent": null,
+        "start": 40.914,
+        "end": 41.377
+      },
+      {
+        "text": "as",
+        "accent": null,
+        "start": 41.377,
+        "end": 41.642
+      },
+      {
+        "text": "esferas",
+        "accent": null,
+        "start": 41.642,
+        "end": 42.238
+      },
+      {
+        "text": "e",
+        "accent": null,
+        "start": 42.238,
+        "end": 42.436
+      },
+      {
+        "text": "crava",
+        "accent": null,
+        "start": 42.436,
+        "end": 42.899
+      },
+      {
+        "text": "sua",
+        "accent": null,
+        "start": 42.899,
+        "end": 43.23
+      },
+      {
+        "text": "altitude",
+        "accent": "cyan",
+        "start": 43.23,
+        "end": 43.892
+      },
+      {
+        "text": "exata.",
+        "accent": null,
+        "start": 43.892,
+        "end": 44.62
+      }
+    ]
+  },
+  {
+    "scene": 10,
+    "title": "Retorno à Terra",
+    "start": 45,
+    "end": 50,
+    "voiceover": "Bizarro pensar que o mapa do seu bolso...",
+    "caption": "Bizarro pensar que o mapa do seu bolso...",
+    "words": [
+      {
+        "text": "Bizarro",
+        "accent": null,
+        "start": 45.12,
+        "end": 45.884
+      },
+      {
+        "text": "pensar",
+        "accent": null,
+        "start": 45.884,
+        "end": 46.563
+      },
+      {
+        "text": "que",
+        "accent": null,
+        "start": 46.563,
+        "end": 46.988
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 46.988,
+        "end": 47.243
+      },
+      {
+        "text": "mapa",
+        "accent": null,
+        "start": 47.243,
+        "end": 47.752
+      },
+      {
+        "text": "do",
+        "accent": null,
+        "start": 47.752,
+        "end": 48.092
+      },
+      {
+        "text": "seu",
+        "accent": null,
+        "start": 48.092,
+        "end": 48.516
+      },
+      {
+        "text": "bolso...",
+        "accent": null,
+        "start": 48.516,
+        "end": 49.62
+      }
+    ]
+  },
+  {
+    "scene": 11,
+    "title": "O Pin Centralizado",
+    "start": 50,
+    "end": 55,
+    "voiceover": "...funciona conversando direto com o espaço sideral!",
+    "caption": "...funciona conversando direto com o espaço sideral!",
+    "words": [
+      {
+        "text": "...funciona",
+        "accent": null,
+        "start": 50.12,
+        "end": 51.049
+      },
+      {
+        "text": "conversando",
+        "accent": null,
+        "start": 51.049,
+        "end": 51.977
+      },
+      {
+        "text": "direto",
+        "accent": null,
+        "start": 51.977,
+        "end": 52.549
+      },
+      {
+        "text": "com",
+        "accent": null,
+        "start": 52.549,
+        "end": 52.906
+      },
+      {
+        "text": "o",
+        "accent": null,
+        "start": 52.906,
+        "end": 53.12
+      },
+      {
+        "text": "espaço",
+        "accent": "cyan",
+        "start": 53.12,
+        "end": 53.691
+      },
+      {
+        "text": "sideral!",
+        "accent": "cyan",
+        "start": 53.691,
+        "end": 54.62
+      }
+    ]
+  },
+  {
+    "scene": 12,
+    "title": "O Fechamento (CTA)",
+    "start": 55,
+    "end": 60,
+    "voiceover": "Curtiu? Segue para mais curiosidades de tecnologia!",
+    "caption": "Curtiu? Segue para mais curiosidades de tecnologia!",
+    "words": [
+      {
+        "text": "Curtiu?",
+        "accent": null,
+        "start": 55.12,
+        "end": 55.951
+      },
+      {
+        "text": "Segue",
+        "accent": "cyan",
+        "start": 55.951,
+        "end": 56.435
+      },
+      {
+        "text": "para",
+        "accent": null,
+        "start": 56.435,
+        "end": 56.851
+      },
+      {
+        "text": "mais",
+        "accent": null,
+        "start": 56.851,
+        "end": 57.266
+      },
+      {
+        "text": "curiosidades",
+        "accent": null,
+        "start": 57.266,
+        "end": 58.235
+      },
+      {
+        "text": "de",
+        "accent": null,
+        "start": 58.235,
+        "end": 58.512
+      },
+      {
+        "text": "tecnologia!",
+        "accent": null,
+        "start": 58.512,
+        "end": 59.62
+      }
+    ]
+  }
+]

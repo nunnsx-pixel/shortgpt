@@ -1,0 +1,21 @@
+{
+  "name": "gps-trilateration-animation",
+  "private": true,
+  "version": "1.0.0",
+  "description": "60 s vertical (1080x1920 @30fps) 3D explainer: how GPS works (trilateration). Three.js + Playwright + ffmpeg. No TTS.",
+  "type": "module",
+  "scripts": {
+    "render": "node tools/render.mjs --frames 0-1799 --workers 3 --out frames",
+    "captions": "node tools/export_captions.mjs",
+    "encode": "bash tools/encode.sh",
+    "build": "npm run render && npm run captions && npm run encode"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "^5.0.0",
+    "three": "0.170.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

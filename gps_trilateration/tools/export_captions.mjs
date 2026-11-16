@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+// Exports the caption/voice-over timing used by the animation as:
+//   out/captions.srt        - one cue per scene (what is burned into the video)
+//   out/captions_words.srt  - word-by-word cues (karaoke timing)
+//   out/captions.json       - full data (scene, VO line, per-word start/end in absolute seconds)
+// Use these to re-time everything if you later record or generate a real voice-over.
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { SCENES, SCENE_SECONDS, wordsOfScene, plain } from '../src/captions.js';
+
+const OUT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'out');
+fs.mkdirSync(OUT, { recursive: true });
+const ts = (s) => {
+  const ms = Math.round(s * 1000), h = Math.floor(ms / 3600000), m = Math.floor((ms % 3600000) / 60000), sec = Math.floor((ms % 60000) / 1000), r = ms % 1000;
+  const p = (n, l = 2) => String(n).padStart(l, '0');
+  return `${p(h)}:${p(m)}:${p(sec)},${p(r, 3)}`;
+};
+
+let srt = '', wsrt = '', n = 1, wn = 1;
+const json = SCENES.map((sc, i) => {
+  const base = i * SCENE_SECONDS, words = wordsOfScene(i);
+  srt += `${n++}\n${ts(base)} --> ${ts(base + SCENE_SECONDS - 0.04)}\n${plain(i)}\n\n`;
+  words.forEach((w) => { wsrt += `${wn++}\n${ts(base + w.start)} --> ${ts(base + w.end)}\n${w.text}\n\n`; });
+  return { scene: sc.id, title: sc.title, start: base, end: base + SCENE_SECONDS, voiceover: sc.vo, caption: plain(i), words: words.map((w) => ({ text: w.text, accent: w.cls || null, start: +(base + w.start).toFixed(3), end: +(base + w.end).toFixed(3) })) };
+});
+fs.writeFileSync(path.join(OUT, 'captions.srt'), srt);
+fs.writeFileSync(path.join(OUT, 'captions_words.srt'), wsrt);
+fs.writeFileSync(path.join(OUT, 'captions.json'), JSON.stringify(json, null, 2));
+console.log(`wrote ${SCENES.length} scenes -> out/captions.srt, out/captions_words.srt, out/captions.json`);

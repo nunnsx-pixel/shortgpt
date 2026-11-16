@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Como o GPS funciona - Trilateração</title>
+<style>
+  @font-face { font-family: 'Montserrat'; font-weight: 700; src: url('node_modules/@fontsource/montserrat/files/montserrat-latin-700-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Montserrat'; font-weight: 800; src: url('node_modules/@fontsource/montserrat/files/montserrat-latin-800-normal.woff2') format('woff2'); }
+  @font-face { font-family: 'Montserrat'; font-weight: 900; src: url('node_modules/@fontsource/montserrat/files/montserrat-latin-900-normal.woff2') format('woff2'); }
+  html, body { margin: 0; background: #050505; overflow: hidden; }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #050505; }
+  canvas#c { display: block; width: 1080px; height: 1920px; }
+  /* Captions: just below the vertical centre (y=960), clear of the TikTok/Shorts UI rails. */
+  #captions {
+    position: absolute; left: 60px; width: 960px; top: 1030px; text-align: center;
+    font-family: 'Montserrat', 'DejaVu Sans', sans-serif; font-weight: 800; font-size: 62px; line-height: 1.16;
+    color: #fff; letter-spacing: -0.5px; pointer-events: none;
+  }
+  #captions .w {
+    display: inline-block; margin: 0 0.13em; opacity: 0; will-change: transform;
+    -webkit-text-stroke: 12px rgba(0,0,0,0.96); paint-order: stroke fill; stroke-linejoin: round;
+    text-shadow: 0 6px 22px rgba(0,0,0,0.75);
+  }
+  #captions .w.red  { color: #ff2a55; }
+  #captions .w.cyan { color: #00f0ff; }
+</style>
+<script type="importmap">
+{ "imports": { "three": "./node_modules/three/build/three.module.js", "three/addons/": "./node_modules/three/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="stage"><canvas id="c" width="1080" height="1920"></canvas><div id="captions"></div></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
